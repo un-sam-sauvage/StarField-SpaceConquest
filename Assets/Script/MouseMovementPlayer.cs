@@ -14,6 +14,7 @@ public class MouseMovementPlayer : MonoBehaviour
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3Int coordinate = grid.WorldToCell(mouseWorldPos);
             Vector3 positionPlayer = grid.GetCellCenterLocal(coordinate);
+            
             gameObject.transform.DOMove(positionPlayer,.7f);
         }
     }

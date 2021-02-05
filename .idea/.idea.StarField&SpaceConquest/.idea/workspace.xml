@@ -21,11 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d91714f4-5d53-425d-a120-0b7af24c09d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Player1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Player2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player2.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MouseMovementPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/MouseMovementPlayer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,12 +40,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Script/MouseMovementPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/StartTurn.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/State.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Player1.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Player2.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Player1.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/State.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/MouseMovementPlayer.cs" />
       </list>
     </option>
   </component>
@@ -93,7 +89,7 @@
       <option name="presentableId" value="Default" />
       <updated>1612373649145</updated>
       <workItem from="1612373653801" duration="3331000" />
-      <workItem from="1612554793567" duration="2695000" />
+      <workItem from="1612554793567" duration="3367000" />
     </task>
     <servers />
   </component>
