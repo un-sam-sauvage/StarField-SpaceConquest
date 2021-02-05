@@ -15,7 +15,7 @@
     };
 
     public STATE name;
-    public Event stage;
+    protected Event stage;
     protected State nextState;
 
     public State()

@@ -18,15 +18,18 @@ public class Player1 : State
 //=~= void Update 
     public override void Update()
     {
-        nextState = new Player2();
-        Debug.Log("dans l'update de player 1");
-        base.Update();
+        if (GameManager.instance.changeTurn)
+        {
+            nextState = new Player2();
+            Debug.Log("dans l'update de player 1");
+            stage = Event.EXIT;
+        }
     }
 //sortir du script
     public override void Exit()
     {
         Debug.Log("fin du tour du joueur 1");
-        base.Exit();
         nextState.Process();
+        base.Exit();
     }
 }
