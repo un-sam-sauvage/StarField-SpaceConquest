@@ -1,14 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using UnityEditor.SceneManagement;
-using UnityEngine;
-
-public class State
+﻿public class State
 {
     public enum STATE
     {
-        StartTurn,
         Player1,
         Player2,
         //tout les tours des roles 
@@ -22,9 +15,8 @@ public class State
     };
 
     public STATE name;
-    protected Event stage;
+    public Event stage;
     protected State nextState;
-    public float timer;
 
     public State()
     {

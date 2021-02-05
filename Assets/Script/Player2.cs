@@ -2,30 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player1 : State
+public class Player2 : State
 {
-    public Player1()
+    public Player2()
     {
-        name = STATE.Player1;
+        name = STATE.Player2;
     }
 
     //=~= void start
     public override void Enter()
     {
-        Debug.Log("début du tour du joueur 1");
+        Debug.Log("début du tour du joueur 2");
         base.Enter();
     }
 //=~= void Update 
     public override void Update()
     {
-        nextState = new Player2();
-        Debug.Log("dans l'update de player 1");
+        nextState = new Player1();
+        Debug.Log("dans l'update de player 2");
         base.Update();
     }
 //sortir du script
     public override void Exit()
     {
-        Debug.Log("fin du tour du joueur 1");
+        Debug.Log("fin du tour du joueur 2");
         base.Exit();
         nextState.Process();
     }
