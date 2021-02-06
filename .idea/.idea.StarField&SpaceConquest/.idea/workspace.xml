@@ -20,7 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d91714f4-5d53-425d-a120-0b7af24c09d5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/MouseMovementPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/MouseMovementPlayer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +36,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/State.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Player2.cs" root0="FORCE_HIGHLIGHTING" />
@@ -46,6 +51,7 @@
         <option value="$PROJECT_DIR$/Assets/Script/Player1.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/State.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/MouseMovementPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs" />
       </list>
     </option>
   </component>
@@ -90,6 +96,7 @@
       <updated>1612373649145</updated>
       <workItem from="1612373653801" duration="3331000" />
       <workItem from="1612554793567" duration="3367000" />
+      <workItem from="1612632940735" duration="3765000" />
     </task>
     <servers />
   </component>
