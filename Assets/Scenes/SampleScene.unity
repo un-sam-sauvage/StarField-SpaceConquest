@@ -150,7 +150,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb163633cc6b25449834c70c9d9d4fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  players:
+  - {fileID: 1498134346}
   changeTurn: 0
+  tilemap: {fileID: 2009738192}
+  movementTile: {fileID: 11400000, guid: 722a541960945674292569aa098befc1, type: 2}
 --- !u!4 &40018123
 Transform:
   m_ObjectHideFlags: 0
@@ -811,11 +815,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1498134346}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cec91756868926943acabbceaaf9e60b, type: 3}
+  m_Script: {fileID: 11500000, guid: 50861fb2803ec7e46b69f451246bffa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemap: {fileID: 2009738192}
-  tileToMove: {fileID: 11400000, guid: 722a541960945674292569aa098befc1, type: 2}
   range: 2
 --- !u!1 &2009738189
 GameObject:

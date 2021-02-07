@@ -2,6 +2,7 @@
 {
     public enum STATE
     {
+        PlayerMovementState,
         Player1,
         Player2,
         //tout les tours des roles 
