@@ -26,10 +26,10 @@ public class DrawPlayerMovement : MonoBehaviour
         List<Vector3> tiles = new List<Vector3>();
         tiles.Add(start + Vector3.left);
         tiles.Add(start + Vector3.right);
-        tiles.Add(start + Vector3.up + .5f * Vector3.right);
-        tiles.Add(start + Vector3.up + .5f * Vector3.left);
-        tiles.Add(start + Vector3.down + .5f * Vector3.right);
-        tiles.Add(start + Vector3.down + .5f * Vector3.left);
+        tiles.Add(start + new Vector3(-.5f, .75f, 0));
+        tiles.Add(start + new Vector3(.5f, .75f, 0));
+        tiles.Add(start + new Vector3(.5f, -.75f, 0));
+        tiles.Add(start + new Vector3(-.5f, -.75f, 0));
         return tiles;
     }
 }

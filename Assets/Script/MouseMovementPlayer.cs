@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -22,7 +23,7 @@ public class MouseMovementPlayer : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            foreach (var tile in DrawPlayerMovement.GetMovableTile(range,tilemap.WorldToCell(gameObject.transform.position)))
+            foreach (var tile in DrawPlayerMovement.GetMovableTile(range,gameObject.transform.position))
             {
                 tilemap.SetTile(tilemap.WorldToCell(tile),tileToMove);
             }

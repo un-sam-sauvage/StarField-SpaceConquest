@@ -816,7 +816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 2009738192}
   tileToMove: {fileID: 11400000, guid: 722a541960945674292569aa098befc1, type: 2}
-  range: 1
+  range: 2
 --- !u!1 &2009738189
 GameObject:
   m_ObjectHideFlags: 0
