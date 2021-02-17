@@ -24,8 +24,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerMovementState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerMovementState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerMovementState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerMovementState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/State.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/State.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprite/EmoteClément.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprite/EmoteClément.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,11 +42,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/State.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Unit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/PlayerMovementState.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -49,13 +53,18 @@
         <option value="$PROJECT_DIR$/Assets/Script/StartTurn.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Player2.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Player1.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/State.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/MouseMovementPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/PlayerMovementState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/ScriptableUnit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/State/State.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/State/PlayerMovementState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/GameManager.cs" />
       </list>
     </option>
   </component>
@@ -105,6 +114,8 @@
       <workItem from="1612708248700" duration="6103000" />
       <workItem from="1612896184913" duration="91000" />
       <workItem from="1612980594531" duration="2374000" />
+      <workItem from="1613131879446" duration="890000" />
+      <workItem from="1613590483235" duration="4413000" />
     </task>
     <servers />
   </component>

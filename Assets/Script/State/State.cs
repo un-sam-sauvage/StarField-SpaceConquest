@@ -2,9 +2,8 @@
 {
     public enum STATE
     {
-        PlayerMovementState,
-        Player1,
-        Player2,
+        UnitMovementState,
+
         //tout les tours des roles 
     };
     public enum Event

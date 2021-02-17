@@ -27,8 +27,14 @@
           <e p="DrawPlayerMovement.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="PlayerInfos.cs" t="Include" />
-          <e p="PlayerMovementState.cs" t="Include" />
-          <e p="State.cs" t="Include" />
+          <e p="Scriptable" t="Include">
+            <e p="ScriptableUnit.cs" t="Include" />
+          </e>
+          <e p="State" t="Include">
+            <e p="PlayerMovementState.cs" t="Include" />
+            <e p="State.cs" t="Include" />
+            <e p="UnitAttackState.cs" t="Include" />
+          </e>
           <e p="Unit.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">

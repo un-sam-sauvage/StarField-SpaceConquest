@@ -1,19 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
-public class PlayerMovementState : State
+
+public class UnitMovementState : State
 {
     private int _range;
     private Unit _unit;
     private List<Vector3> _tileToClear = new List<Vector3>();
     private GameManager _gm;
 
-    public PlayerMovementState(int range, Unit unit)
+    public UnitMovementState(Unit unit)
     {
-        name = STATE.PlayerMovementState;
-        _range = range;
+        name = STATE.UnitMovementState;
+        _range = unit.movement;
         _unit = unit;
     }
 
@@ -33,7 +32,6 @@ public class PlayerMovementState : State
 //=~= void Update 
     public override void Update()
     {
-        //Debug.Log("dans l'update de player 2");
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3Int coordinate = _gm.tilemap.WorldToCell(mouseWorldPos);
         Vector3 positionPlayer = _gm.tilemap.GetCellCenterLocal(coordinate);
@@ -42,10 +40,6 @@ public class PlayerMovementState : State
         {
             _unit.Move(positionPlayer);
             stage = Event.EXIT;
-            foreach (var tile in _tileToClear)
-            {
-                _gm.tilemap.SetTile(_gm.tilemap.WorldToCell(tile), null);
-            }
         }
         else if (Input.GetMouseButtonDown(0) && _gm.tilemap.GetTile(coordinate) == _gm.movementTile)
         {
@@ -56,6 +50,10 @@ public class PlayerMovementState : State
 //sortir du script
     public override void Exit()
     {
+        foreach (var tile in _tileToClear)
+        {
+            _gm.tilemap.SetTile(_gm.tilemap.WorldToCell(tile), null);
+        }
         _tileToClear.Clear();
         base.Exit();
     }

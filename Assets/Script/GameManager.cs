@@ -1,25 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class GameManager : MonoBehaviour
 {
     private State _currentState;
-    
+
     public List<GameObject> players;
-    
+
     private int _turn;
-    private int _unit;
-    
+
     public Tilemap tilemap;
-    
+
     public Tile movementTile;
+    public Tile attackTile;
 
     private PlayerInfos _currentPlayer;
 
-    private List<Unit> _currentPlayerUnits;
-    private Unit _currentUnit;
+    public List<Unit> currentPlayerUnits;
+
+    [HideInInspector] public Unit currentUnit;
+
+    public TextMeshProUGUI unitLife;
+    public TextMeshProUGUI unitName;
+    public TextMeshProUGUI unitMovement;
+    public TextMeshProUGUI unitShield;
+    public TextMeshProUGUI unitAtk;
+
     #region singleton
 
     public static GameManager instance;
@@ -35,21 +44,17 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         _currentPlayer = players[_turn].GetComponent<PlayerInfos>();
-        _currentPlayerUnits = _currentPlayer.units;
-        _currentUnit = _currentPlayerUnits[_unit];
-        _currentUnit.SetState(new PlayerMovementState(_currentUnit.range,_currentUnit));
-        _currentState = new PlayerMovementState(_currentUnit.range, _currentUnit);
+        currentPlayerUnits = _currentPlayer.units;
     }
 
     private void Update()
     {
-        _currentState.Process();
-        Debug.Log(_turn);
+        _currentState?.Process();
     }
 
     public void NextTurn()
     {
-        if (_turn >= players.Count-1)
+        if (_turn >= players.Count - 1)
         {
             _turn = 0;
         }
@@ -58,26 +63,57 @@ public class GameManager : MonoBehaviour
             _turn++;
         }
 
+        //TODO réinitialisez les variables de l'unités (hasMoved , hasAttacked, hasPlayed)
         _currentPlayer = players[_turn].GetComponent<PlayerInfos>();
-        _currentPlayerUnits = _currentPlayer.units;
-        //_currentPlayer.SetState(new PlayerMovementState(_currentPlayer.range, _currentPlayer));
-        //_currentState = new PlayerMovementState(_currentPlayer.range, _currentPlayer);
+        currentPlayerUnits = _currentPlayer.units;
     }
 
     public void NextUnit()
     {
-        if (_unit >= _currentPlayer.units.Count-1)
+        bool allUnisOfCurrentPlayerHasPlayed;
+        currentUnit.hasPlayed = true;
+        if (!allUnisOfCurrentPlayerHasPlayed)
         {
-            _unit = 0;
             NextTurn();
+        }
+    }
+
+    public void ShowCurrentUnitInfos(Unit unit)
+    {
+        unitAtk.text = $"atk : {unit.atk.ToString()}";
+        unitLife.text = $"life : {unit.life.ToString()}";
+        unitMovement.text = $"movement : {unit.movement.ToString()}";
+        unitName.text = $"name : {unit.unitName}";
+        unitShield.text = $"shield : {unit.shield.ToString()}";
+    }
+
+    public void SetUnitToAttackMode()
+    {
+        if (!currentUnit.hasAttacked)
+        {
+            currentUnit.SetState(new UnitAttackState(currentUnit));
+            _currentState = new UnitAttackState(currentUnit);
+            currentUnit.hasAttacked = true;
         }
         else
         {
-            _unit++;
+            //TODO rendre le bouton non interactahble
+            Debug.Log("l'unité à déjà attaqué");
         }
-        _currentPlayerUnits = _currentPlayer.units;
-        _currentUnit = _currentPlayerUnits[_unit];
-        _currentUnit.SetState(new PlayerMovementState(_currentUnit.range,_currentUnit));
-        _currentState = new PlayerMovementState(_currentUnit.range, _currentUnit);
+    }
+
+    public void SetUnitToMovementMode()
+    {
+        if (!currentUnit.hasMoved)
+        {
+            currentUnit.SetState(new UnitMovementState(currentUnit));
+            _currentState = new UnitMovementState(currentUnit);
+            currentUnit.hasMoved = true;
+        }
+        else
+        {
+            //TODO rendre le bouton non interactahble
+            Debug.Log("l'unité à déjà bougé");
+        }
     }
 }
