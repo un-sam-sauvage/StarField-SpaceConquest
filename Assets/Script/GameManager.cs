@@ -6,12 +6,16 @@ using UnityEngine.Tilemaps;
 
 public class GameManager : MonoBehaviour
 {
-    private State _currentState;
+    public State currentState;
 
     public List<GameObject> players;
 
     private int _turn;
 
+    private bool _isInMovementMode;
+    
+    public Vector3 initialUnitPosition;
+    
     public Tilemap tilemap;
 
     public Tile movementTile;
@@ -20,7 +24,9 @@ public class GameManager : MonoBehaviour
     private PlayerInfos _currentPlayer;
 
     public List<Unit> currentPlayerUnits;
-
+    
+    [HideInInspector] public GameObject unitSelectedForAttack;
+    
     [HideInInspector] public Unit currentUnit;
 
     public TextMeshProUGUI unitLife;
@@ -49,11 +55,12 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        _currentState?.Process();
+        currentState?.Process();
     }
 
     public void NextTurn()
     {
+        Debug.Log("on passe au tour suivant");
         if (_turn >= players.Count - 1)
         {
             _turn = 0;
@@ -68,11 +75,27 @@ public class GameManager : MonoBehaviour
         currentPlayerUnits = _currentPlayer.units;
     }
 
+    bool AllUnitsOfCurrentPlayerHasPlayed()
+    {
+        foreach (var unit in currentPlayerUnits)
+        {
+            if (!unit.hasPlayed)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public void NextUnit()
     {
-        bool allUnisOfCurrentPlayerHasPlayed;
+        currentState.Exit();
         currentUnit.hasPlayed = true;
-        if (!allUnisOfCurrentPlayerHasPlayed)
+        _isInMovementMode = false;
+        currentUnit.SetColor(Color.white);
+        currentUnit = null;
+        if (AllUnitsOfCurrentPlayerHasPlayed())
         {
             NextTurn();
         }
@@ -89,10 +112,12 @@ public class GameManager : MonoBehaviour
 
     public void SetUnitToAttackMode()
     {
-        if (!currentUnit.hasAttacked)
+        _isInMovementMode = false;
+        currentState.Exit();
+        if (currentUnit != null && !currentUnit.hasAttacked)
         {
             currentUnit.SetState(new UnitAttackState(currentUnit));
-            _currentState = new UnitAttackState(currentUnit);
+            currentState = new UnitAttackState(currentUnit);
             currentUnit.hasAttacked = true;
         }
         else
@@ -104,16 +129,26 @@ public class GameManager : MonoBehaviour
 
     public void SetUnitToMovementMode()
     {
-        if (!currentUnit.hasMoved)
+        
+        _isInMovementMode = true;
+        if (currentUnit != null && !currentUnit.hasMoved)
         {
             currentUnit.SetState(new UnitMovementState(currentUnit));
-            _currentState = new UnitMovementState(currentUnit);
+            currentState = new UnitMovementState(currentUnit);
             currentUnit.hasMoved = true;
         }
         else
         {
             //TODO rendre le bouton non interactahble
             Debug.Log("l'unité à déjà bougé");
+        }
+    }
+
+    public void ResetUnitMovement()
+    {
+        if (_isInMovementMode)
+        {
+            currentUnit.Move(initialUnitPosition);
         }
     }
 }

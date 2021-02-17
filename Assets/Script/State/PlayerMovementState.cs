@@ -39,11 +39,6 @@ public class UnitMovementState : State
         if (Input.GetMouseButtonDown(0) && _gm.tilemap.GetTile(coordinate) == _gm.movementTile)
         {
             _unit.Move(positionPlayer);
-            stage = Event.EXIT;
-        }
-        else if (Input.GetMouseButtonDown(0) && _gm.tilemap.GetTile(coordinate) == _gm.movementTile)
-        {
-            Debug.Log(_gm.tilemap.GetTile(coordinate));
         }
     }
 

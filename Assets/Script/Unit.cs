@@ -56,13 +56,21 @@ public class Unit : MonoBehaviour
     public void OnMouseDown()
     {
         _gm = GameManager.instance;
+        _gm.unitSelectedForAttack = gameObject;
         foreach (var unit in _gm.currentPlayerUnits)
         {
-            if (unit == this)
+            if (unit == this && _gm.currentUnit == null && !hasPlayed)
             {
                 _gm.currentUnit = this;
                 _gm.ShowCurrentUnitInfos(this);
+                _gm.initialUnitPosition = _gm.tilemap.WorldToCell(GetPos());
+                SetColor(Color.red);
             }
         }
+    }
+
+    public void SetColor(Color color)
+    {
+        GetComponent<SpriteRenderer>().color = color;
     }
 }

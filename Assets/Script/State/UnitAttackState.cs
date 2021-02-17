@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class UnitAttackState : State
@@ -25,16 +24,38 @@ public class UnitAttackState : State
         base.Enter();
     }
 
+    bool IsInMyTeam()
+    {
+        foreach (var unit in _gm.currentPlayerUnits)
+        {
+            if (_gm.unitSelectedForAttack.GetComponent<Unit>() == unit)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    
     public override void Update()
     {
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3Int coordinate = _gm.tilemap.WorldToCell(mouseWorldPos);
-        Vector3 positionPlayer = _gm.tilemap.GetCellCenterLocal(coordinate);
+
+        if (Input.GetMouseButtonDown(0) && _gm.tilemap.GetTile(coordinate) == _gm.attackTile && _gm.tilemap.WorldToCell(_gm.unitSelectedForAttack.transform.position) == coordinate && !IsInMyTeam())
+        {
+            Debug.Log("je peux attaquer cette unité");
+        }
+
         base.Update();
     }
 
     public override void Exit()
     {
+        foreach (var tile in _tileToClear)
+        {
+            _gm.tilemap.SetTile(_gm.tilemap.WorldToCell(tile), null);
+        }
+        _tileToClear.Clear();
         base.Exit();
     }
 }
