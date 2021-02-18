@@ -36,7 +36,7 @@ public class UnitMovementState : State
         Vector3Int coordinate = _gm.tilemap.WorldToCell(mouseWorldPos);
         Vector3 positionPlayer = _gm.tilemap.GetCellCenterLocal(coordinate);
         //move the player to the cell which was clicked
-        if (Input.GetMouseButtonDown(0) && _gm.tilemap.GetTile(coordinate) == _gm.movementTile)
+        if (Input.GetMouseButtonDown(0) && _gm.tilemap.GetTile(coordinate) == _gm.movementTile &&_gm.tilemap.WorldToCell(_gm.unitSelectedForAttack.transform.position) != coordinate)
         {
             _unit.Move(positionPlayer);
         }

@@ -33,17 +33,55 @@ public class UnitAttackState : State
                 return true;
             }
         }
+
         return false;
     }
-    
+
     public override void Update()
     {
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3Int coordinate = _gm.tilemap.WorldToCell(mouseWorldPos);
 
-        if (Input.GetMouseButtonDown(0) && _gm.tilemap.GetTile(coordinate) == _gm.attackTile && _gm.tilemap.WorldToCell(_gm.unitSelectedForAttack.transform.position) == coordinate && !IsInMyTeam())
+        if (Input.GetMouseButtonDown(0) && _gm.tilemap.GetTile(coordinate) == _gm.attackTile &&
+            _gm.tilemap.WorldToCell(_gm.unitSelectedForAttack.transform.position) == coordinate && !IsInMyTeam())
         {
-            Debug.Log("je peux attaquer cette unité");
+            Debug.Log("j'attaque cette unité");
+            Unit unitAttacked = _gm.unitSelectedForAttack.GetComponent<Unit>();
+            int damageDone = _unit.atk - unitAttacked.shield;
+            if (damageDone > 0)
+            {
+                unitAttacked.life -= damageDone;
+            }
+            else
+            {
+                Debug.Log("vous n'aviez pas assez d'atk pour infligez des dégâts");
+            }
+            
+            if(unitAttacked.life >0)
+            {
+                int damageReceived = unitAttacked.atk - _unit.shield;
+                if (damageReceived > 0)
+                {
+                    _unit.life -= damageReceived;
+                }
+                else
+                {
+                    Debug.Log("l'ennemi n'avait pas assez d'atk pour vous infligez des dégâts");
+                }
+                if (_unit.life <= 0)
+                {
+                    _unit.gameObject.SetActive(false);
+                    Debug.Log("Votre unité est morte");
+                }
+            }
+            else
+            {
+                unitAttacked.gameObject.SetActive(false);
+                Debug.Log("l'unité ennemie a été détruite");
+            }
+
+            stage = Event.EXIT;
+            _gm.ShowCurrentUnitInfos(_unit);
         }
 
         base.Update();
@@ -55,6 +93,7 @@ public class UnitAttackState : State
         {
             _gm.tilemap.SetTile(_gm.tilemap.WorldToCell(tile), null);
         }
+
         _tileToClear.Clear();
         base.Exit();
     }

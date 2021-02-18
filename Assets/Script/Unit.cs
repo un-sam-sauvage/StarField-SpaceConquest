@@ -63,7 +63,7 @@ public class Unit : MonoBehaviour
             {
                 _gm.currentUnit = this;
                 _gm.ShowCurrentUnitInfos(this);
-                _gm.initialUnitPosition = _gm.tilemap.WorldToCell(GetPos());
+                _gm.initialUnitPosition = GetPos();
                 SetColor(Color.red);
             }
         }
