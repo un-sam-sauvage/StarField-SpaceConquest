@@ -23,9 +23,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/State/PlayerMovementState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/PlayerMovementState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Units/BaseUnit.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Units/BaseUnit.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,13 +55,13 @@
         <option value="$PROJECT_DIR$/Assets/Script/PlayerMovementState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/ScriptableUnit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/State/State.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Unit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/State/PlayerMovementState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/State/PlayerMovementState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Unit.cs" />
       </list>
     </option>
   </component>
@@ -112,6 +114,9 @@
       <workItem from="1613131879446" duration="890000" />
       <workItem from="1613590483235" duration="7720000" />
       <workItem from="1613668865988" duration="2368000" />
+      <workItem from="1613842032078" duration="595000" />
+      <workItem from="1613866401947" duration="699000" />
+      <workItem from="1613904189301" duration="4910000" />
     </task>
     <servers />
   </component>
@@ -134,5 +139,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1613904603713">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.8.1920.1040@0.0.1920.1040" timestamp="1613904603713" />
   </component>
 </project>

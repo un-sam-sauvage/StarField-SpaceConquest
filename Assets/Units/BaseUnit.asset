@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BaseUnit
   m_EditorClassIdentifier: 
   name: Base Unit
-  hasPlayed: 0
   life: 2
-  atk: 1
+  atk: 3
   movement: 2
   shield: 2
+  animator: {fileID: 9100000, guid: 533c7ba605eb62c418f2c710062a84e8, type: 2}

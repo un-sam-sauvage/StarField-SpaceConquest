@@ -51,13 +51,14 @@ public class UnitAttackState : State
             if (damageDone > 0)
             {
                 unitAttacked.life -= damageDone;
+                _unit.unitAnimator.SetBool("IsShooting", true);
             }
             else
             {
                 Debug.Log("vous n'aviez pas assez d'atk pour infligez des dégâts");
             }
-            
-            if(unitAttacked.life >0)
+
+            if (unitAttacked.life > 0)
             {
                 int damageReceived = unitAttacked.atk - _unit.shield;
                 if (damageReceived > 0)
@@ -67,24 +68,29 @@ public class UnitAttackState : State
                 else
                 {
                     Debug.Log("l'ennemi n'avait pas assez d'atk pour vous infligez des dégâts");
+                    stage = Event.EXIT;
                 }
+
                 if (_unit.life <= 0)
                 {
-                    _unit.gameObject.SetActive(false);
+                    _unit.unitAnimator.SetBool("IsDead", true);
                     Debug.Log("Votre unité est morte");
+                    stage = Event.EXIT;
+                }
+                else
+                {
+                    stage = Event.EXIT;
                 }
             }
             else
             {
-                unitAttacked.gameObject.SetActive(false);
                 Debug.Log("l'unité ennemie a été détruite");
+                unitAttacked.unitAnimator.SetBool("IsDead", true);
+                stage = Event.EXIT;
             }
-
-            stage = Event.EXIT;
             _gm.ShowCurrentUnitInfos(_unit);
+            
         }
-
-        base.Update();
     }
 
     public override void Exit()

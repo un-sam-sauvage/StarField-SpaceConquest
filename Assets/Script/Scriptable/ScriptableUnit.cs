@@ -10,4 +10,5 @@ public class ScriptableUnit : ScriptableObject
     public int atk;
     public int movement;
     public int shield;
+    public RuntimeAnimatorController animator;
 }

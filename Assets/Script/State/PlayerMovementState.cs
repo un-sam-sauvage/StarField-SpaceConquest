@@ -38,6 +38,7 @@ public class UnitMovementState : State
         //move the player to the cell which was clicked
         if (Input.GetMouseButtonDown(0) && _gm.tilemap.GetTile(coordinate) == _gm.movementTile &&_gm.tilemap.WorldToCell(_gm.unitSelectedForAttack.transform.position) != coordinate)
         {
+            _unit.unitAnimator.SetBool("IsMoving", true);
             _unit.Move(positionPlayer);
         }
     }

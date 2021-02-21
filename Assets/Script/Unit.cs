@@ -13,6 +13,8 @@ public class Unit : MonoBehaviour
 
     [HideInInspector] public string unitName;
 
+    [HideInInspector] public Animator unitAnimator;
+
     public bool hasPlayed;
     public bool hasAttacked;
     public bool hasMoved;
@@ -30,6 +32,8 @@ public class Unit : MonoBehaviour
         atk = thisUnit.atk;
         shield = thisUnit.shield;
         life = thisUnit.life;
+        unitAnimator = GetComponent<Animator>();
+        unitAnimator.runtimeAnimatorController = thisUnit.animator;
     }
 
     public Vector3 GetPos()
@@ -39,7 +43,15 @@ public class Unit : MonoBehaviour
 
     public void Move(Vector3 positionToGo)
     {
-        gameObject.transform.DOMove(positionToGo, .7f);
+        Debug.Log("je lance l'animation");
+        Quaternion oldRotation = transform.rotation;
+        Sequence mySequence = DOTween.Sequence();
+        Vector3 dir = positionToGo - transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        Quaternion newRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        mySequence.Append(transform.DORotate(new Vector3(newRotation.x, newRotation.y, newRotation.z), .2f));
+        mySequence.Append(transform.DOMove(positionToGo, 1f));
+        mySequence.Append(transform.DORotate(new Vector3(oldRotation.x, oldRotation.y, oldRotation.z), .2f).OnComplete(()=> unitAnimator.SetBool("IsMoving", false)));
     }
 
     public void SetState(State state)
@@ -72,5 +84,16 @@ public class Unit : MonoBehaviour
     public void SetColor(Color color)
     {
         GetComponent<SpriteRenderer>().color = color;
+    }
+
+    public void TriggerDeadByAnimation()
+    {
+        gameObject.SetActive(false);
+        Debug.Log("l'unité a été détruite");
+    }
+
+    public void TriggerEndShooting()
+    {
+        unitAnimator.SetBool("IsShooting", false);
     }
 }
