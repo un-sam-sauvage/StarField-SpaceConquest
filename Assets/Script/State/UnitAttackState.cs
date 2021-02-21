@@ -47,6 +47,7 @@ public class UnitAttackState : State
         {
             Debug.Log("j'attaque cette unité");
             Unit unitAttacked = _gm.unitSelectedForAttack.GetComponent<Unit>();
+            _unit.Rotate(_gm.unitSelectedForAttack.transform.position);
             int damageDone = _unit.atk - unitAttacked.shield;
             if (damageDone > 0)
             {

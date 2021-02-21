@@ -15,16 +15,16 @@ public class Unit : MonoBehaviour
 
     [HideInInspector] public Animator unitAnimator;
 
-    public bool hasPlayed;
-    public bool hasAttacked;
-    public bool hasMoved;
-
+    [HideInInspector]public bool hasPlayed;
+    [HideInInspector]public bool hasAttacked;
+    [HideInInspector]public bool hasMoved;
+    
     private State _currentState;
 
     public ScriptableUnit thisUnit;
 
     private GameManager _gm;
-
+    
     private void Awake()
     {
         unitName = thisUnit.name;
@@ -44,14 +44,16 @@ public class Unit : MonoBehaviour
     public void Move(Vector3 positionToGo)
     {
         Debug.Log("je lance l'animation");
-        Quaternion oldRotation = transform.rotation;
-        Sequence mySequence = DOTween.Sequence();
-        Vector3 dir = positionToGo - transform.position;
+        Rotate(positionToGo);
+        transform.DOMove(positionToGo, 1f).OnComplete(()=> unitAnimator.SetBool("IsMoving", false));
+        
+    }
+
+    public void Rotate(Vector3 positionToLookAt)
+    {
+        Vector3 dir = positionToLookAt - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        Quaternion newRotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        mySequence.Append(transform.DORotate(new Vector3(newRotation.x, newRotation.y, newRotation.z), .2f));
-        mySequence.Append(transform.DOMove(positionToGo, 1f));
-        mySequence.Append(transform.DORotate(new Vector3(oldRotation.x, oldRotation.y, oldRotation.z), .2f).OnComplete(()=> unitAnimator.SetBool("IsMoving", false)));
+        transform.DORotate(new Vector3(0,0,Quaternion.AngleAxis(angle-90, Vector3.forward).z*100), .35f);
     }
 
     public void SetState(State state)
@@ -76,14 +78,8 @@ public class Unit : MonoBehaviour
                 _gm.currentUnit = this;
                 _gm.ShowCurrentUnitInfos(this);
                 _gm.initialUnitPosition = GetPos();
-                SetColor(Color.red);
             }
         }
-    }
-
-    public void SetColor(Color color)
-    {
-        GetComponent<SpriteRenderer>().color = color;
     }
 
     public void TriggerDeadByAnimation()

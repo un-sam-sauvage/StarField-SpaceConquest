@@ -22,11 +22,21 @@
     <list default="true" id="d91714f4-5d53-425d-a120-0b7af24c09d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/BaseUnit.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/BaseUnit.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/DeathBaseUnit.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/DeathBaseUnit.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/MovementBaseUnit.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/MovementBaseUnit.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/ShootBaseUnit.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/ShootBaseUnit.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/State/PlayerMovementState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/PlayerMovementState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprite/TileTest1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprite/TileTest1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprite/TileTestRed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprite/TileTestRed.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprite/Unit1SpritesheetDeath.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprite/Unit1SpritesheetDeath.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprite/Unit1SpritesheetMove.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprite/Unit1SpritesheetMove.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprite/Unit1SpritesheetShoot.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprite/Unit1SpritesheetShoot.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Units/BaseUnit.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Units/BaseUnit.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,10 +67,10 @@
         <option value="$PROJECT_DIR$/Assets/Script/ScriptableUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/State/State.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/State/PlayerMovementState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Unit.cs" />
       </list>
     </option>
@@ -116,7 +126,8 @@
       <workItem from="1613668865988" duration="2368000" />
       <workItem from="1613842032078" duration="595000" />
       <workItem from="1613866401947" duration="699000" />
-      <workItem from="1613904189301" duration="4910000" />
+      <workItem from="1613904189301" duration="6028000" />
+      <workItem from="1613946006984" duration="1742000" />
     </task>
     <servers />
   </component>

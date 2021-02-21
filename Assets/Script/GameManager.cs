@@ -93,7 +93,6 @@ public class GameManager : MonoBehaviour
         currentState.Exit();
         currentUnit.hasPlayed = true;
         _isInMovementMode = false;
-        currentUnit.SetColor(Color.white);
         currentUnit = null;
         if (AllUnitsOfCurrentPlayerHasPlayed())
         {
