@@ -56,7 +56,7 @@ public class UnitAttackState : State
             }
             else
             {
-                Debug.Log("vous n'aviez pas assez d'atk pour infligez des dégâts");
+                Debug.Log("vous n'aviez pas assez d'atk pour infliger des dégâts");
             }
 
             if (unitAttacked.life > 0)
@@ -68,7 +68,7 @@ public class UnitAttackState : State
                 }
                 else
                 {
-                    Debug.Log("l'ennemi n'avait pas assez d'atk pour vous infligez des dégâts");
+                    Debug.Log("l'ennemi n'avait pas assez d'atk pour vous infliger des dégâts");
                     stage = Event.EXIT;
                 }
 
@@ -89,8 +89,8 @@ public class UnitAttackState : State
                 unitAttacked.unitAnimator.SetBool("IsDead", true);
                 stage = Event.EXIT;
             }
+
             _gm.ShowCurrentUnitInfos(_unit);
-            
         }
     }
 
