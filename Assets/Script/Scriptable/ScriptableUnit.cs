@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "NameOfUnit",menuName = "ScriptableObjects/Unit")]
 public class ScriptableUnit : ScriptableObject
@@ -10,5 +8,7 @@ public class ScriptableUnit : ScriptableObject
     public int atk;
     public int movement;
     public int shield;
+    public int attackRange;
+    public bool canHeal;
     public RuntimeAnimatorController animator;
 }

@@ -17,3 +17,6 @@ MonoBehaviour:
   atk: 5
   movement: 2
   shield: 0
+  attackRange: 1
+  canHeal: 0
+  animator: {fileID: 0}

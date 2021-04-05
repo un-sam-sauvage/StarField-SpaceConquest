@@ -10,6 +10,7 @@ public class Unit : MonoBehaviour
     [HideInInspector] public int atk;
     [HideInInspector] public int shield;
     [HideInInspector] public int life;
+    [HideInInspector] public int attackRange;
 
     [HideInInspector] public string unitName;
 
@@ -32,6 +33,7 @@ public class Unit : MonoBehaviour
         atk = thisUnit.atk;
         shield = thisUnit.shield;
         life = thisUnit.life;
+        attackRange = thisUnit.attackRange;
         unitAnimator = GetComponent<Animator>();
         unitAnimator.runtimeAnimatorController = thisUnit.animator;
     }

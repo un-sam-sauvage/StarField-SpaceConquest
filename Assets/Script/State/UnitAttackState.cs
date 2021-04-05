@@ -15,7 +15,7 @@ public class UnitAttackState : State
     public override void Enter()
     {
         _gm = GameManager.instance;
-        foreach (var tile in DrawPlayerMovement.GetAdjacentTiles(_unit.GetPos()))
+        foreach (var tile in DrawPlayerMovement.GetMovableTile(_unit.attackRange ,_unit.GetPos()))
         {
             _gm.tilemap.SetTile(_gm.tilemap.WorldToCell(tile), _gm.attackTile);
             _tileToClear.Add(tile);
