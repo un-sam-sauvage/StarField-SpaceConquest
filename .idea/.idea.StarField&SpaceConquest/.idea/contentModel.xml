@@ -33,6 +33,7 @@
           <e p="State" t="Include">
             <e p="PlayerMovementState.cs" t="Include" />
             <e p="State.cs" t="Include" />
+            <e p="UnitAttackDistState.cs" t="Include" />
             <e p="UnitAttackState.cs" t="Include" />
           </e>
           <e p="Unit.cs" t="Include" />

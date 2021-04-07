@@ -272,7 +272,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &17070339
 RectTransform:
   m_ObjectHideFlags: 0
@@ -413,6 +413,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb163633cc6b25449834c70c9d9d4fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonsUnit:
+  - {fileID: 631138267}
+  - {fileID: 753120463}
+  - {fileID: 17070338}
+  - {fileID: 1867826935}
+  - {fileID: 72767091}
   players:
   - {fileID: 1259129468}
   - {fileID: 490718527}
@@ -460,7 +466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &72767092
 RectTransform:
   m_ObjectHideFlags: 0
@@ -918,6 +924,7 @@ MonoBehaviour:
   atk: 0
   shield: 0
   life: 0
+  attackRange: 0
   unitName: 
   unitAnimator: {fileID: 0}
   hasPlayed: 0
@@ -1818,7 +1825,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &631138268
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1947,7 +1954,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &753120464
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2045,6 +2052,7 @@ MonoBehaviour:
   atk: 0
   shield: 0
   life: 0
+  attackRange: 0
   unitName: 
   unitAnimator: {fileID: 0}
   hasPlayed: 0
@@ -2509,6 +2517,7 @@ MonoBehaviour:
   atk: 0
   shield: 0
   life: 0
+  attackRange: 0
   unitName: 
   unitAnimator: {fileID: 0}
   hasPlayed: 0
@@ -2578,7 +2587,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1867826936
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2976,6 +2985,7 @@ MonoBehaviour:
   atk: 0
   shield: 0
   life: 0
+  attackRange: 0
   unitName: 
   unitAnimator: {fileID: 0}
   hasPlayed: 0

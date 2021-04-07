@@ -80,6 +80,7 @@ public class Unit : MonoBehaviour
                 _gm.currentUnit = this;
                 _gm.ShowCurrentUnitInfos(this);
                 _gm.initialUnitPosition = GetPos();
+                _gm.ShowUIforUnit(true);
             }
         }
     }

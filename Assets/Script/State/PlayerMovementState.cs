@@ -11,7 +11,6 @@ public class UnitMovementState : State
 
     public UnitMovementState(Unit unit)
     {
-        name = STATE.UnitMovementState;
         _range = unit.movement;
         _unit = unit;
     }

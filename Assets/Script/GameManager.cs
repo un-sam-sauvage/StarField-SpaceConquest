@@ -8,14 +8,15 @@ public class GameManager : MonoBehaviour
 {
     public State currentState;
 
+    public List<GameObject> buttonsUnit;
     public List<GameObject> players;
 
     private int _turn;
 
     private bool _isInMovementMode;
-    
-    public Vector3 initialUnitPosition;
-    
+
+    [HideInInspector] public Vector3 initialUnitPosition;
+
     public Tilemap tilemap;
 
     public Tile movementTile;
@@ -23,13 +24,13 @@ public class GameManager : MonoBehaviour
 
     private PlayerInfos _currentPlayer;
 
-    public List<Unit> currentPlayerUnits;
-    
+    [HideInInspector] public List<Unit> currentPlayerUnits;
+
     [HideInInspector] public GameObject unitSelectedForAttack;
-    
+
     [HideInInspector] public Unit currentUnit;
 
-    public TextMeshProUGUI unitLife;
+    [Header("Text")] public TextMeshProUGUI unitLife;
     public TextMeshProUGUI unitName;
     public TextMeshProUGUI unitMovement;
     public TextMeshProUGUI unitShield;
@@ -94,6 +95,7 @@ public class GameManager : MonoBehaviour
         currentUnit.hasPlayed = true;
         _isInMovementMode = false;
         currentUnit = null;
+        ShowUIforUnit(false);
         if (AllUnitsOfCurrentPlayerHasPlayed())
         {
             NextTurn();
@@ -115,8 +117,8 @@ public class GameManager : MonoBehaviour
         currentState.Exit();
         if (currentUnit != null && !currentUnit.hasAttacked)
         {
-            currentUnit.SetState(new UnitAttackState(currentUnit));
-            currentState = new UnitAttackState(currentUnit);
+            currentUnit.SetState(new UnitAttackDistState(currentUnit));
+            currentState = new UnitAttackDistState(currentUnit);
             currentUnit.hasAttacked = true;
         }
         else
@@ -128,7 +130,6 @@ public class GameManager : MonoBehaviour
 
     public void SetUnitToMovementMode()
     {
-        
         _isInMovementMode = true;
         if (currentUnit != null && !currentUnit.hasMoved)
         {
@@ -148,6 +149,14 @@ public class GameManager : MonoBehaviour
         if (_isInMovementMode)
         {
             currentUnit.Move(initialUnitPosition);
+        }
+    }
+
+    public void ShowUIforUnit(bool setActive)
+    {
+        foreach (var element in buttonsUnit)
+        {
+            element.SetActive(setActive);
         }
     }
 }

@@ -1,20 +1,13 @@
 ﻿public class State
 {
-    public enum STATE
-    {
-        UnitMovementState,
-
-        //tout les tours des roles 
-    };
     public enum Event
     {
         //Quand tu rentre dans la variable , update et quand tu sors
         ENTER,
         UPDATE,
         EXIT
-    };
-
-    public STATE name;
+    }
+    
     protected Event stage;
     protected State nextState;
 
