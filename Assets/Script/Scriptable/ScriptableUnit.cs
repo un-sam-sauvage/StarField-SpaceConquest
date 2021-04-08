@@ -3,7 +3,7 @@
 [CreateAssetMenu(fileName = "NameOfUnit",menuName = "ScriptableObjects/Unit")]
 public class ScriptableUnit : ScriptableObject
 {
-    public string name;
+    public string type;
     public int life;
     public int atk;
     public int movement;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 
 public class GameManager : MonoBehaviour
@@ -11,18 +12,12 @@ public class GameManager : MonoBehaviour
     public List<GameObject> buttonsUnit;
     public List<GameObject> players;
 
-    private int _turn;
-
-    private bool _isInMovementMode;
-
-    [HideInInspector] public Vector3 initialUnitPosition;
-
+    public GameObject panelUIUnitAttackable;
+    
     public Tilemap tilemap;
 
     public Tile movementTile;
     public Tile attackTile;
-
-    private PlayerInfos _currentPlayer;
 
     [HideInInspector] public List<Unit> currentPlayerUnits;
 
@@ -30,12 +25,24 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public Unit currentUnit;
 
-    [Header("Text")] public TextMeshProUGUI unitLife;
+    [HideInInspector] public UnityEvent selectUnitToAttack;
+
+    [HideInInspector] public Vector3 initialUnitPosition;
+    
+    private PlayerInfos _currentPlayer;
+    
+    private int _turn;
+
+    private bool _isInMovementMode;
+
+    [Header("Text UI Infos Unit")]
+    public TextMeshProUGUI unitLife;
     public TextMeshProUGUI unitName;
     public TextMeshProUGUI unitMovement;
     public TextMeshProUGUI unitShield;
     public TextMeshProUGUI unitAtk;
-
+    
+    public List<TextMeshProUGUI> unitsAttackableText;
     #region singleton
 
     public static GameManager instance;
@@ -91,7 +98,7 @@ public class GameManager : MonoBehaviour
 
     public void NextUnit()
     {
-        currentState.Exit();
+        currentState?.Exit();
         currentUnit.hasPlayed = true;
         _isInMovementMode = false;
         currentUnit = null;
@@ -107,18 +114,18 @@ public class GameManager : MonoBehaviour
         unitAtk.text = $"atk : {unit.atk.ToString()}";
         unitLife.text = $"life : {unit.life.ToString()}";
         unitMovement.text = $"movement : {unit.movement.ToString()}";
-        unitName.text = $"name : {unit.unitName}";
+        unitName.text = $"name : {unit.unitType}";
         unitShield.text = $"shield : {unit.shield.ToString()}";
     }
 
     public void SetUnitToAttackMode()
     {
         _isInMovementMode = false;
-        currentState.Exit();
+        currentState?.Exit();
         if (currentUnit != null && !currentUnit.hasAttacked)
         {
-            currentUnit.SetState(new UnitAttackDistState(currentUnit));
-            currentState = new UnitAttackDistState(currentUnit);
+            currentUnit.SetState(new UnitAttackState(currentUnit));
+            currentState = new UnitAttackState(currentUnit);
             currentUnit.hasAttacked = true;
         }
         else
@@ -158,5 +165,21 @@ public class GameManager : MonoBehaviour
         {
             element.SetActive(setActive);
         }
+    }
+
+    public void ShowUnitAttackable(Vector3 posOfPanel, List<Unit> unitAttackable)
+    {
+        panelUIUnitAttackable.transform.position = posOfPanel;
+        panelUIUnitAttackable.SetActive(true);
+        for (int i = 0; i < unitAttackable.Count; i++)
+        {
+            unitsAttackableText[i].text = unitAttackable[i].unitName;
+        }
+    }
+
+    public void SelectUnitToAttack(GameObject unitToAttack)
+    {
+        unitSelectedForAttack = unitToAttack;
+        selectUnitToAttack.Invoke();
     }
 }

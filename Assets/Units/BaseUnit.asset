@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5359a82983cd232419c8438811633601, type: 3}
   m_Name: BaseUnit
   m_EditorClassIdentifier: 
-  name: Base Unit
+  type: BaseUnit
   life: 2
   atk: 3
-  movement: 2
+  movement: 4
   shield: 2
   attackRange: 2
   canHeal: 0

@@ -6,13 +6,17 @@ public class UnitAttackState : State
 {
     private GameManager _gm;
     private Unit _unit;
+
     public UnitAttackState(Unit unit)
     {
         _unit = unit;
     }
+
     public override void Enter()
     {
         _gm = GameManager.instance;
+        _gm.selectUnitToAttack.AddListener(AttackUnit);
+        _gm.ShowUnitAttackable(_unit.GetPos() + new Vector3(2f, 0, 0), GetUnitAttackable());
         base.Enter();
     }
 
@@ -25,27 +29,32 @@ public class UnitAttackState : State
                 return true;
             }
         }
+
         return false;
     }
 
-    bool IsSomeoneAttackable()
+    List<Unit> GetUnitAttackable()
     {
+        List<Unit> unitAttackable = new List<Unit>();
         foreach (var player in _gm.players)
         {
             foreach (var unit in player.GetComponent<PlayerInfos>().units)
             {
-                if (_gm.tilemap.WorldToCell(unit.GetPos()) == _gm.tilemap.WorldToCell(_unit.GetPos()) && !IsInMyTeam())
+                if (_gm.tilemap.WorldToCell(unit.GetPos()) == _gm.tilemap.WorldToCell(_unit.GetPos()) && unit != _unit)
                 {
-                    return true;
+                    unitAttackable.Add(unit);
                 }
             }
         }
-        return false;
+
+        return unitAttackable;
     }
-    public override void Update()
+
+    void AttackUnit()
     {
-        if (IsSomeoneAttackable())
+        if (GetUnitAttackable().Count > 0)
         {
+            //_gm.unitSelectedForAttack;
             //TODO faire le système d'attaque classique avec les prises de dégâts et la mort.
         }
         else

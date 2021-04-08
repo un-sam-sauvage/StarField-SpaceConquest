@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
 
 public class Unit : MonoBehaviour
@@ -12,7 +9,7 @@ public class Unit : MonoBehaviour
     [HideInInspector] public int life;
     [HideInInspector] public int attackRange;
 
-    [HideInInspector] public string unitName;
+    [HideInInspector] public string unitType;
 
     [HideInInspector] public Animator unitAnimator;
 
@@ -21,14 +18,16 @@ public class Unit : MonoBehaviour
     [HideInInspector]public bool hasMoved;
     
     private State _currentState;
-
+    
+    public string unitName;
+    
     public ScriptableUnit thisUnit;
 
     private GameManager _gm;
     
     private void Awake()
     {
-        unitName = thisUnit.name;
+        unitType = thisUnit.type;
         movement = thisUnit.movement;
         atk = thisUnit.atk;
         shield = thisUnit.shield;

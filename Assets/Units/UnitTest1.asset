@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5359a82983cd232419c8438811633601, type: 3}
   m_Name: UnitTest1
   m_EditorClassIdentifier: 
-  name: Test1
+  type: UnitTest
   life: 1
   atk: 5
   movement: 2
