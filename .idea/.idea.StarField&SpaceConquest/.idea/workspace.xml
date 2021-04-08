@@ -21,8 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d91714f4-5d53-425d-a120-0b7af24c09d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,10 +50,10 @@
         <option value="$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/ScriptableUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/State/State.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/State/PlayerMovementState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/State/State.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" />
       </list>
@@ -119,7 +117,7 @@
       <workItem from="1614947771411" duration="847000" />
       <workItem from="1615539023133" duration="17000" />
       <workItem from="1617820678787" duration="2077000" />
-      <workItem from="1617884324101" duration="2007000" />
+      <workItem from="1617884324101" duration="9349000" />
     </task>
     <servers />
   </component>
@@ -144,6 +142,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1617887790693">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.8.1920.1040@0.0.1920.1040" timestamp="1617887790693" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1613904603713">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
