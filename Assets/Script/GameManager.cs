@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> players;
 
     public GameObject panelUIUnitAttackable;
-    
+
     public Tilemap tilemap;
 
     public Tile movementTile;
@@ -28,21 +29,21 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public UnityEvent selectUnitToAttack;
 
     [HideInInspector] public Vector3 initialUnitPosition;
-    
+
     private PlayerInfos _currentPlayer;
-    
+
     private int _turn;
 
     private bool _isInMovementMode;
 
-    [Header("Text UI Infos Unit")]
-    public TextMeshProUGUI unitLife;
+    [Header("Text UI Infos Unit")] public TextMeshProUGUI unitLife;
     public TextMeshProUGUI unitName;
     public TextMeshProUGUI unitMovement;
     public TextMeshProUGUI unitShield;
     public TextMeshProUGUI unitAtk;
-    
-    public List<TextMeshProUGUI> unitsAttackableText;
+
+    public List<Button> unitsAttackableButton;
+
     #region singleton
 
     public static GameManager instance;
@@ -125,7 +126,7 @@ public class GameManager : MonoBehaviour
         if (currentUnit != null && !currentUnit.hasAttacked)
         {
             currentUnit.SetState(new UnitAttackState(currentUnit));
-            currentState = new UnitAttackState(currentUnit);
+            currentState = currentUnit.GetState();
             currentUnit.hasAttacked = true;
         }
         else
@@ -137,9 +138,9 @@ public class GameManager : MonoBehaviour
 
     public void SetUnitToMovementMode()
     {
-        _isInMovementMode = true;
         if (currentUnit != null && !currentUnit.hasMoved)
         {
+            _isInMovementMode = true;
             currentUnit.SetState(new UnitMovementState(currentUnit));
             currentState = new UnitMovementState(currentUnit);
             currentUnit.hasMoved = true;
@@ -167,19 +168,45 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private List<Unit> _unitAttackable;
+
     public void ShowUnitAttackable(Vector3 posOfPanel, List<Unit> unitAttackable)
     {
+        _unitAttackable = unitAttackable;
         panelUIUnitAttackable.transform.position = posOfPanel;
         panelUIUnitAttackable.SetActive(true);
         for (int i = 0; i < unitAttackable.Count; i++)
         {
-            unitsAttackableText[i].text = unitAttackable[i].unitName;
+            unitsAttackableButton[i].GetComponentInChildren<TextMeshProUGUI>().text = unitAttackable[i].unitName;
+        }
+
+        for (int i = unitAttackable.Count; i < unitsAttackableButton.Count; i++)
+        {
+            unitsAttackableButton[i].gameObject.SetActive(false);
+        }
+
+        int nbActiveButton = 0;
+        foreach (var button in unitsAttackableButton)
+        {
+            if (button.IsActive())
+            {
+                nbActiveButton++;
+            }
         }
     }
 
-    public void SelectUnitToAttack(GameObject unitToAttack)
+    public void SelectUnitToAttack(int buttonIndex)
     {
-        unitSelectedForAttack = unitToAttack;
-        selectUnitToAttack.Invoke();
+        foreach (var unit in _unitAttackable)
+        {
+            if (unitsAttackableButton[buttonIndex].GetComponentInChildren<TextMeshProUGUI>().text == unit.unitName)
+            {
+                unitSelectedForAttack = unit.gameObject;
+                selectUnitToAttack.Invoke();
+                return;
+            }
+        }
+
+        Debug.LogWarning("Aucune unité correspondante");
     }
 }

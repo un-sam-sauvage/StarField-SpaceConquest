@@ -20,16 +20,15 @@ public class UnitAttackState : State
         base.Enter();
     }
 
-    bool IsInMyTeam()
+    bool IsInMyTeam(Unit targetUnit)
     {
-        foreach (var unit in _gm.currentPlayerUnits)
+        foreach (var unitAlly in _gm.currentPlayerUnits)
         {
-            if (_gm.tilemap.WorldToCell(unit.GetPos()) == _gm.tilemap.WorldToCell(_unit.GetPos()))
+            if (targetUnit.unitName == unitAlly.unitName)
             {
                 return true;
             }
         }
-
         return false;
     }
 
@@ -40,7 +39,7 @@ public class UnitAttackState : State
         {
             foreach (var unit in player.GetComponent<PlayerInfos>().units)
             {
-                if (_gm.tilemap.WorldToCell(unit.GetPos()) == _gm.tilemap.WorldToCell(_unit.GetPos()) && unit != _unit)
+                if (_gm.tilemap.WorldToCell(unit.GetPos()) == _gm.tilemap.WorldToCell(_unit.GetPos()) && !IsInMyTeam(unit))
                 {
                     unitAttackable.Add(unit);
                 }
@@ -54,17 +53,63 @@ public class UnitAttackState : State
     {
         if (GetUnitAttackable().Count > 0)
         {
-            //_gm.unitSelectedForAttack;
-            //TODO faire le système d'attaque classique avec les prises de dégâts et la mort.
+            Debug.Log("j'attaque cette unité");
+            Unit unitAttacked = _gm.unitSelectedForAttack.GetComponent<Unit>();
+            _unit.Rotate(_gm.unitSelectedForAttack.transform.position);
+            int damageDone = _unit.atk - unitAttacked.shield;
+            if (damageDone > 0)
+            {
+                unitAttacked.life -= damageDone;
+                _unit.unitAnimator.SetBool("IsShooting", true);
+            }
+            else
+            {
+                Debug.Log("vous n'aviez pas assez d'atk pour infliger des dégâts");
+            }
+
+            if (unitAttacked.life > 0)
+            {
+                int damageReceived = unitAttacked.atk - _unit.shield;
+                if (damageReceived > 0)
+                {
+                    _unit.life -= damageReceived;
+                }
+                else
+                {
+                    Debug.Log("l'ennemi n'avait pas assez d'atk pour vous infliger des dégâts");
+                    stage = Event.EXIT;
+                }
+
+                if (_unit.life <= 0)
+                {
+                    _unit.unitAnimator.SetBool("IsDead", true);
+                    Debug.Log("Votre unité est morte");
+                    stage = Event.EXIT;
+                }
+                else
+                {
+                    stage = Event.EXIT;
+                }
+            }
+            else
+            {
+                Debug.Log("l'unité ennemie a été détruite");
+                unitAttacked.unitAnimator.SetBool("IsDead", true);
+                stage = Event.EXIT;
+            }
+
+            _gm.ShowCurrentUnitInfos(_unit);
         }
         else
         {
+            Debug.Log("je sors");
             stage = Event.EXIT;
         }
     }
 
     public override void Exit()
     {
+        _gm.panelUIUnitAttackable.SetActive(false);
         base.Exit();
     }
 }

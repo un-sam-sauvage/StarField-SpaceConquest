@@ -68,6 +68,10 @@ public class Unit : MonoBehaviour
         _currentState?.Enter();
     }
 
+    public State GetState()
+    {
+        return _currentState;
+    }
     public void OnMouseDown()
     {
         _gm = GameManager.instance;
