@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: BaseUnit
   life: 2
-  atk: 3
+  atk: 10
   movement: 4
   shield: 2
   attackRange: 2

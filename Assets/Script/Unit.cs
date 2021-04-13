@@ -44,7 +44,6 @@ public class Unit : MonoBehaviour
 
     public void Move(Vector3 positionToGo)
     {
-        Debug.Log("je lance l'animation");
         Rotate(positionToGo);
         transform.DOMove(positionToGo, 1f).OnComplete(()=> unitAnimator.SetBool("IsMoving", false));
     }
@@ -82,6 +81,7 @@ public class Unit : MonoBehaviour
                 _gm.currentUnit = this;
                 _gm.ShowCurrentUnitInfos(this);
                 _gm.initialUnitPosition = GetPos();
+                _gm.initialEnemiUnitPosition = GetPos();
                 _gm.ShowUIforUnit(true);
             }
         }

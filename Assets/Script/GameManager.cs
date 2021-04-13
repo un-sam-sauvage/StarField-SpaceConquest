@@ -29,7 +29,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public UnityEvent selectUnitToAttack;
 
     [HideInInspector] public Vector3 initialUnitPosition;
-
+    [HideInInspector] public Vector3 initialEnemiUnitPosition;
+    
     private PlayerInfos _currentPlayer;
 
     private int _turn;
@@ -100,6 +101,7 @@ public class GameManager : MonoBehaviour
     public void NextUnit()
     {
         currentState?.Exit();
+        unitSelectedForAttack.GetComponent<Unit>().Move(initialEnemiUnitPosition);
         currentUnit.hasPlayed = true;
         _isInMovementMode = false;
         currentUnit = null;

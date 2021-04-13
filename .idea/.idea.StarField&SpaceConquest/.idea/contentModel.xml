@@ -24,6 +24,7 @@
           </e>
         </e>
         <e p="Script" t="Include">
+          <e p="CameraMovement.cs" t="Include" />
           <e p="DrawPlayerMovement.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="PlayerInfos.cs" t="Include" />

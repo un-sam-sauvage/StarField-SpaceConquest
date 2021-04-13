@@ -57,7 +57,7 @@ public class UnitAttackState : State
         {
             Debug.Log("j'attaque cette unité");
             Unit unitAttacked = _gm.unitSelectedForAttack.GetComponent<Unit>();
-            Vector3 initialPosUnitAttacked = _gm.unitSelectedForAttack.GetComponent<Unit>().GetPos();
+            _gm.initialEnemiUnitPosition = _gm.unitSelectedForAttack.GetComponent<Unit>().GetPos();
             _gm.unitSelectedForAttack.GetComponent<Unit>().Move(_unit.GetPos() + Vector3.right);
             _unit.Rotate(_gm.unitSelectedForAttack.transform.position);
             int damageDone = _unit.atk - unitAttacked.shield;
@@ -102,7 +102,6 @@ public class UnitAttackState : State
                 stage = Event.EXIT;
             }
 
-            _gm.unitSelectedForAttack.GetComponent<Unit>().Move(initialPosUnitAttacked);
             _gm.ShowCurrentUnitInfos(_unit);
         }
         else
