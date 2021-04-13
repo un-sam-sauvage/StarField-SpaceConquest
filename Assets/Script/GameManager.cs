@@ -193,6 +193,18 @@ public class GameManager : MonoBehaviour
                 nbActiveButton++;
             }
         }
+        if (nbActiveButton == 0)
+        {
+            unitsAttackableButton[0].gameObject.SetActive(true);
+            unitsAttackableButton[0].GetComponentInChildren<TextMeshProUGUI>().text = "no Unit attackable";
+        }
+        else
+        {
+            var padding = panelUIUnitAttackable.GetComponent<RectMask2D>().padding;
+            padding.y = 185 - 58 * (nbActiveButton-1);
+            panelUIUnitAttackable.GetComponent<RectMask2D>().padding = padding;
+        }
+
     }
 
     public void SelectUnitToAttack(int buttonIndex)

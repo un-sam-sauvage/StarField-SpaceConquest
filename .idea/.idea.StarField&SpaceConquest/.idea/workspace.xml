@@ -23,6 +23,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/State/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/State.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Unit.cs" afterDir="false" />
     </list>
@@ -54,12 +55,12 @@
         <option value="$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/ScriptableUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/State/State.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/State/PlayerMovementState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Unit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/State/State.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Unit.cs" />
       </list>
     </option>
   </component>
@@ -123,6 +124,7 @@
       <workItem from="1617820678787" duration="2077000" />
       <workItem from="1617884324101" duration="9349000" />
       <workItem from="1617979099750" duration="7767000" />
+      <workItem from="1618332075090" duration="3882000" />
     </task>
     <servers />
   </component>

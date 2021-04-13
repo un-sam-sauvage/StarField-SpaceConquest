@@ -1,4 +1,6 @@
-﻿public class State
+﻿using UnityEngine;
+
+public class State
 {
     public enum Event
     {

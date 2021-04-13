@@ -47,7 +47,6 @@ public class Unit : MonoBehaviour
         Debug.Log("je lance l'animation");
         Rotate(positionToGo);
         transform.DOMove(positionToGo, 1f).OnComplete(()=> unitAnimator.SetBool("IsMoving", false));
-        
     }
 
     public void Rotate(Vector3 positionToLookAt)
