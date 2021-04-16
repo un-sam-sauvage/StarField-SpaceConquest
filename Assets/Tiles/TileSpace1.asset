@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: TileSpace1
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -8727780473390840067, guid: add24d2938d955143a8cae9f66dc5f82,
+  m_Sprite: {fileID: -2453547545867635791, guid: 2aa82570f401fc34cb217f58bf5baeb9,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:

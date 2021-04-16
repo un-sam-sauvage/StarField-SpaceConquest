@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -15,7 +14,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject panelUIUnitAttackable;
 
-    public Tilemap tilemap;
+    public Tilemap boardTilemap;
+    public Tilemap moveTilemap;
 
     public Tile movementTile;
     public Tile attackTile;
@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public Vector3 initialUnitPosition;
     [HideInInspector] public Vector3 initialEnemiUnitPosition;
-    
+
     private PlayerInfos _currentPlayer;
 
     private int _turn;
@@ -81,6 +81,12 @@ public class GameManager : MonoBehaviour
         }
 
         //TODO réinitialisez les variables de l'unités (hasMoved , hasAttacked, hasPlayed)
+        foreach (var unit in currentPlayerUnits)
+        {
+            unit.hasAttacked = false;
+            unit.hasMoved = false;
+            unit.hasPlayed = false;
+        }
         _currentPlayer = players[_turn].GetComponent<PlayerInfos>();
         currentPlayerUnits = _currentPlayer.units;
     }
@@ -101,7 +107,9 @@ public class GameManager : MonoBehaviour
     public void NextUnit()
     {
         currentState?.Exit();
-        unitSelectedForAttack.GetComponent<Unit>().Move(initialEnemiUnitPosition);
+        if (unitSelectedForAttack.GetComponent<Unit>().unitName != currentUnit.GetComponent<Unit>().unitName)
+            unitSelectedForAttack.GetComponent<Unit>().Move(initialEnemiUnitPosition);
+
         currentUnit.hasPlayed = true;
         _isInMovementMode = false;
         currentUnit = null;
@@ -195,6 +203,7 @@ public class GameManager : MonoBehaviour
                 nbActiveButton++;
             }
         }
+
         if (nbActiveButton == 0)
         {
             unitsAttackableButton[0].gameObject.SetActive(true);
@@ -203,10 +212,9 @@ public class GameManager : MonoBehaviour
         else
         {
             var padding = panelUIUnitAttackable.GetComponent<RectMask2D>().padding;
-            padding.y = 185 - 58 * (nbActiveButton-1);
+            padding.y = 185 - 58 * (nbActiveButton - 1);
             panelUIUnitAttackable.GetComponent<RectMask2D>().padding = padding;
         }
-
     }
 
     public void SelectUnitToAttack(int buttonIndex)

@@ -21,8 +21,11 @@ public class UnitMovementState : State
         _gm = GameManager.instance;
         foreach (var tile in DrawPlayerMovement.GetMovableTile(_range, _unit.GetPos()))
         {
-            _gm.tilemap.SetTile(_gm.tilemap.WorldToCell(tile), _gm.movementTile);
-            _tileToClear.Add(tile);
+            if (_gm.boardTilemap.GetTile(_gm.boardTilemap.WorldToCell(tile)) != null)
+            {
+                _gm.moveTilemap.SetTile(_gm.moveTilemap.WorldToCell(tile), _gm.movementTile);
+                _tileToClear.Add(tile);
+            }
         }
 
         base.Enter();
@@ -32,11 +35,11 @@ public class UnitMovementState : State
     public override void Update()
     {
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3Int coordinate = _gm.tilemap.WorldToCell(mouseWorldPos);
-        Vector3 positionPlayer = _gm.tilemap.GetCellCenterLocal(coordinate);
+        Vector3Int coordinate = _gm.boardTilemap.WorldToCell(mouseWorldPos);
+        Vector3 positionPlayer = _gm.boardTilemap.GetCellCenterLocal(coordinate);
         //move the player to the cell which was clicked
         //TODO limiter le nombre d'unités par case à 4 au total ou 2 par joueur
-        if (Input.GetMouseButtonDown(0) && _gm.tilemap.GetTile(coordinate) == _gm.movementTile)
+        if (Input.GetMouseButtonDown(0) && _gm.moveTilemap.GetTile(coordinate) == _gm.movementTile)
         {
             _unit.unitAnimator.SetBool("IsMoving", true);
             _unit.Move(positionPlayer);
@@ -48,8 +51,9 @@ public class UnitMovementState : State
     {
         foreach (var tile in _tileToClear)
         {
-            _gm.tilemap.SetTile(_gm.tilemap.WorldToCell(tile), null);
+            _gm.moveTilemap.SetTile(_gm.moveTilemap.WorldToCell(tile), null);
         }
+
         _tileToClear.Clear();
         base.Exit();
     }

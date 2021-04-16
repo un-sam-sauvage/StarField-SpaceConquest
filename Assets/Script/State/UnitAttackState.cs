@@ -40,7 +40,7 @@ public class UnitAttackState : State
         {
             foreach (var unit in player.GetComponent<PlayerInfos>().units)
             {
-                if (_gm.tilemap.WorldToCell(unit.GetPos()) == _gm.tilemap.WorldToCell(_unit.GetPos()) &&
+                if (_gm.boardTilemap.WorldToCell(unit.GetPos()) == _gm.boardTilemap.WorldToCell(_unit.GetPos()) &&
                     !IsInMyTeam(unit))
                 {
                     unitAttackable.Add(unit);

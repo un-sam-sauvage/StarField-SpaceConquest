@@ -17,7 +17,7 @@ public class UnitAttackDistState : State
         _gm = GameManager.instance;
         foreach (var tile in DrawPlayerMovement.GetMovableTile(_unit.attackRange ,_unit.GetPos()))
         {
-            _gm.tilemap.SetTile(_gm.tilemap.WorldToCell(tile), _gm.attackTile);
+            _gm.boardTilemap.SetTile(_gm.boardTilemap.WorldToCell(tile), _gm.attackTile);
             _tileToClear.Add(tile);
         }
 
@@ -40,10 +40,10 @@ public class UnitAttackDistState : State
     public override void Update()
     {
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3Int coordinate = _gm.tilemap.WorldToCell(mouseWorldPos);
+        Vector3Int coordinate = _gm.boardTilemap.WorldToCell(mouseWorldPos);
 
-        if (Input.GetMouseButtonDown(0) && _gm.tilemap.GetTile(coordinate) == _gm.attackTile &&
-            _gm.tilemap.WorldToCell(_gm.unitSelectedForAttack.transform.position) == coordinate && !IsInMyTeam())
+        if (Input.GetMouseButtonDown(0) && _gm.boardTilemap.GetTile(coordinate) == _gm.attackTile &&
+            _gm.boardTilemap.WorldToCell(_gm.unitSelectedForAttack.transform.position) == coordinate && !IsInMyTeam())
         {
             Debug.Log("j'attaque cette unité");
             Unit unitAttacked = _gm.unitSelectedForAttack.GetComponent<Unit>();
@@ -98,7 +98,7 @@ public class UnitAttackDistState : State
     {
         foreach (var tile in _tileToClear)
         {
-            _gm.tilemap.SetTile(_gm.tilemap.WorldToCell(tile), null);
+            _gm.boardTilemap.SetTile(_gm.boardTilemap.WorldToCell(tile), null);
         }
 
         _tileToClear.Clear();
