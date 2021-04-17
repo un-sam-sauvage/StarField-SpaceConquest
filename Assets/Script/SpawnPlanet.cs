@@ -60,7 +60,6 @@ public class SpawnPlanet : MonoBehaviour
         {
             if (tilemap.GetTile(tilemap.WorldToCell(tile)) != null)
             {
-                Debug.Log("jajoute");
                 listCleaned.Add(tile);
             }
         }
@@ -74,9 +73,7 @@ public class SpawnPlanet : MonoBehaviour
         {
             List<Vector3> whereToInstantiate = GetTileForPlanet(zone.start, zone.zoneToInstantiatePlanet);
             List<Vector3> whereToInstantiateClean = RemoveBadPos(whereToInstantiate, zone.zoneToInstantiatePlanet);
-            int index = Random.Range(0, whereToInstantiateClean.Count);
-            Debug.Log($"{whereToInstantiateClean.Count} {whereToInstantiate.Count} {zone.zoneToInstantiatePlanet.name}");
-            Vector3Int tile = instantiatePlanet.WorldToCell(whereToInstantiateClean[index]);
+            Vector3Int tile = instantiatePlanet.WorldToCell(whereToInstantiateClean[Random.Range(0, whereToInstantiateClean.Count)]);
             instantiatePlanet.SetTile(tile, planets[Random.Range(0, planets.Count)]);
         }
     }

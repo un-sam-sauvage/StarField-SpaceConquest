@@ -20,32 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d91714f4-5d53-425d-a120-0b7af24c09d5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/State/PlayerMovementState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/State/PlayerMovementState.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/State/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/State.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Attack.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Attack.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace3.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace3.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace4.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace4.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace5.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace5.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace6.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace6.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace7.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace7.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Units/BaseUnit.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Units/BaseUnit.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Units/Board.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Units/Board.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/SpawnPlanet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/SpawnPlanet.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +127,7 @@
       <workItem from="1618332075090" duration="6322000" />
       <workItem from="1618425606178" duration="620000" />
       <workItem from="1618588474794" duration="797000" />
-      <workItem from="1618649827281" duration="9191000" />
+      <workItem from="1618649827281" duration="10095000" />
     </task>
     <servers />
   </component>
