@@ -20,18 +20,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d91714f4-5d53-425d-a120-0b7af24c09d5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/State/PlayerMovementState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/PlayerMovementState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/State/UnitAttackDistState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/UnitAttackDistState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/TileTestRed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/TileTestRed.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/tilesSpaces.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/tilesSpaces.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiles/TileSpace1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/State/PlayerMovementState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/State/PlayerMovementState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/State/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/State.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Attack.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Attack.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace3.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace3.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace4.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace4.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace5.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace5.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace6.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace6.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace7.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/TileSpace7.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Units/BaseUnit.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Units/BaseUnit.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Units/Board.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Units/Board.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +62,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/State/UnitAttackDistState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/State/UnitMovementState.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -58,10 +73,7 @@
         <option value="$PROJECT_DIR$/Assets/Script/State.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/MouseMovementPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/PlayerMovementState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/ScriptableUnit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/State/State.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/CameraController.cs" />
@@ -69,6 +81,10 @@
         <option value="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/State/PlayerMovementState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/State/State.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/SpawnPlanet.cs" />
       </list>
     </option>
   </component>
@@ -134,7 +150,8 @@
       <workItem from="1617979099750" duration="7767000" />
       <workItem from="1618332075090" duration="6322000" />
       <workItem from="1618425606178" duration="620000" />
-      <workItem from="1618588474794" duration="313000" />
+      <workItem from="1618588474794" duration="797000" />
+      <workItem from="1618649827281" duration="9191000" />
     </task>
     <servers />
   </component>
@@ -163,9 +180,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.8.1920.1040@0.0.1920.1040" timestamp="1617887790693" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1617979232871">
+    <state x="623" y="225" width="670" height="58" key="search.everywhere.popup" timestamp="1618589277322">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.8.1920.1040@0.0.1920.1040" timestamp="1617979232871" />
+    <state x="623" y="225" width="670" height="58" key="search.everywhere.popup/0.0.1920.1040/1920.8.1920.1040@0.0.1920.1040" timestamp="1618589277322" />
   </component>
 </project>

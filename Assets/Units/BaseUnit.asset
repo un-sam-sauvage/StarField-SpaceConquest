@@ -15,8 +15,9 @@ MonoBehaviour:
   type: BaseUnit
   life: 2
   atk: 10
-  movement: 4
+  movement: 10
   shield: 2
   attackRange: 2
-  canHeal: 0
+  popCost: 0
+  ressourcesCost: 0
   animator: {fileID: 9100000, guid: 533c7ba605eb62c418f2c710062a84e8, type: 2}

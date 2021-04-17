@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using DG.Tweening;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInfos : MonoBehaviour
