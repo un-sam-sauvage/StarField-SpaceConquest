@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DrawPlayerMovement : MonoBehaviour
 {
+    //get a unique sample of all tile in a given range
     public static List<Vector3> GetMovableTile(int range, Vector3 start)
     {
         List<Vector3> tiles = new List<Vector3>();
