@@ -15,7 +15,7 @@ MonoBehaviour:
   type: BaseUnit
   life: 2
   atk: 10
-  movement: 10
+  movement: 4
   shield: 2
   attackRange: 2
   popCost: 0

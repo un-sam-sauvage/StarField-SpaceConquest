@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class UnitMovementState : State
@@ -31,6 +32,27 @@ public class UnitMovementState : State
         base.Enter();
     }
 
+    bool CanGoToTile(Vector3 tile)
+    {
+        int nbUnitOnTile = 1;
+        foreach (var player in _gm.players)
+        {
+            foreach (var unit in player.GetComponent<PlayerInfos>().units)
+            {
+                if (unit.GetPos() == tile)
+                {
+                    nbUnitOnTile++;
+                }
+            }
+        }
+        if (nbUnitOnTile >= 4)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
 //=~= void Update 
     public override void Update()
     {
@@ -38,9 +60,9 @@ public class UnitMovementState : State
         Vector3Int coordinate = _gm.boardTilemap.WorldToCell(mouseWorldPos);
         Vector3 positionPlayer = _gm.boardTilemap.GetCellCenterLocal(coordinate);
         //move the player to the cell which was clicked
-        //TODO limiter le nombre d'unités par case à 4 au total ou 2 par joueur
-        if (Input.GetMouseButtonDown(0) && _gm.moveTilemap.GetTile(coordinate) == _gm.movementTile)
+        if (Input.GetMouseButtonDown(0) && _gm.moveTilemap.GetTile(coordinate) == _gm.movementTile && CanGoToTile(positionPlayer))
         {
+            
             _unit.unitAnimator.SetBool("IsMoving", true);
             _unit.Move(positionPlayer);
         }

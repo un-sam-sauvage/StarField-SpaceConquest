@@ -15,8 +15,9 @@ MonoBehaviour:
   type: UnitTest
   life: 1
   atk: 5
-  movement: 2
+  movement: 4
   shield: 0
   attackRange: 1
-  canHeal: 0
+  popCost: 0
+  ressourcesCost: 0
   animator: {fileID: 0}

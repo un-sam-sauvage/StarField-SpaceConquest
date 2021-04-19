@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public Vector3 initialUnitPosition;
     [HideInInspector] public Vector3 initialEnemiUnitPosition;
     [HideInInspector] public List<Planet> planets;
-    
+
     private PlayerInfos _currentPlayer;
 
     private int _turn;
@@ -81,13 +81,13 @@ public class GameManager : MonoBehaviour
             _turn++;
         }
 
-        //TODO réinitialisez les variables de l'unités (hasMoved , hasAttacked, hasPlayed)
         foreach (var unit in currentPlayerUnits)
         {
             unit.hasAttacked = false;
             unit.hasMoved = false;
             unit.hasPlayed = false;
         }
+
         _currentPlayer = players[_turn].GetComponent<PlayerInfos>();
         currentPlayerUnits = _currentPlayer.units;
     }
@@ -108,8 +108,10 @@ public class GameManager : MonoBehaviour
     public void NextUnit()
     {
         currentState?.Exit();
-        if (unitSelectedForAttack.GetComponent<Unit>().unitName != currentUnit.GetComponent<Unit>().unitName)
+        if (currentUnit.GetComponent<Unit>().hasAttacked)
+        {
             unitSelectedForAttack.GetComponent<Unit>().Move(initialEnemiUnitPosition);
+        }
 
         currentUnit.hasPlayed = true;
         _isInMovementMode = false;

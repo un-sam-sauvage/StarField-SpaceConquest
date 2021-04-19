@@ -18,4 +18,9 @@ public class Planet : MonoBehaviour
     {
         
     }
+
+    public Vector3 GetPos()
+    {
+        return transform.position;
+    }
 }

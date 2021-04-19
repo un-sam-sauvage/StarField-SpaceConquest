@@ -20,10 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d91714f4-5d53-425d-a120-0b7af24c09d5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/Manager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Manager/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Manager/SpawnPlanet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Manager/SpawnPlanet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Planet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Planet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/State/UnitMovementState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/UnitMovementState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Unit.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,20 +55,21 @@
         <option value="$PROJECT_DIR$/Assets/Script/MouseMovementPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/PlayerMovementState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/ScriptableUnit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/State/PlayerMovementState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/State/State.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/SpawnPlanet.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Planet.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/CameraMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Manager/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Manager/SpawnPlanet.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Planet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Manager/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/State/UnitMovementState.cs" />
       </list>
     </option>
   </component>
@@ -136,6 +140,7 @@
       <workItem from="1618649827281" duration="10095000" />
       <workItem from="1618736572705" duration="2725000" />
       <workItem from="1618752413074" duration="678000" />
+      <workItem from="1618849215764" duration="1852000" />
     </task>
     <servers />
   </component>
