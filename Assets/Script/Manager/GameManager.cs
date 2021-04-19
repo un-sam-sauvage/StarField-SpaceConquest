@@ -30,7 +30,8 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public Vector3 initialUnitPosition;
     [HideInInspector] public Vector3 initialEnemiUnitPosition;
-
+    [HideInInspector] public List<Planet> planets;
+    
     private PlayerInfos _currentPlayer;
 
     private int _turn;

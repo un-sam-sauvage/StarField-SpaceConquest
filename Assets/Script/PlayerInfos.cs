@@ -4,4 +4,5 @@ using UnityEngine;
 public class PlayerInfos : MonoBehaviour
 {
     public List<Unit> units;
+    public List<Planet> planetOwnByPlayer;
 }

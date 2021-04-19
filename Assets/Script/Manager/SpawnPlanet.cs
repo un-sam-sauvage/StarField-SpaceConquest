@@ -80,6 +80,7 @@ public class SpawnPlanet : MonoBehaviour
             planet.popRessources = zone.popRessources;
             planet.commonOreRessources = zone.commonOreRessources;
             planet.rareOreRessources = zone.rareOreRessources;
+            GameManager.instance.planets.Add(planet);
         }
     }
 }
