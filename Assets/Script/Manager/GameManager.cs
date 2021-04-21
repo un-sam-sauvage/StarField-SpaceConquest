@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public State currentState;
 
-    public List<GameObject> buttonsUnit;
+    public GameObject buttonsUnit;
     public List<GameObject> players;
 
     public GameObject panelUIUnitAttackable;
@@ -165,6 +165,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SetUnitToConquestMode()
+    {
+        _isInMovementMode = false;
+        currentState?.Exit();
+        if (currentUnit != null && !currentUnit.hasAttacked)
+        {
+            currentUnit.SetState(new UnitPlanetConquestState(currentUnit));
+            currentState = currentUnit.GetState();
+            currentUnit.hasAttacked = true;
+        }
+        else
+        {
+            //TODO rendre le bouton non interactable
+            Debug.Log("l'unité a déjà attaqué");
+        }
+    }
+
     public void ResetUnitMovement()
     {
         if (_isInMovementMode)
@@ -175,10 +192,7 @@ public class GameManager : MonoBehaviour
 
     public void ShowUIforUnit(bool setActive)
     {
-        foreach (var element in buttonsUnit)
-        {
-            element.SetActive(setActive);
-        }
+        buttonsUnit.SetActive(setActive);
     }
 
     private List<Unit> _unitAttackable;
@@ -219,6 +233,7 @@ public class GameManager : MonoBehaviour
             panelUIUnitAttackable.GetComponent<RectMask2D>().padding = padding;
         }
     }
+
 
     public void SelectUnitToAttack(int buttonIndex)
     {

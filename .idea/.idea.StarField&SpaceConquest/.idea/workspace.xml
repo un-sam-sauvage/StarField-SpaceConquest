@@ -20,13 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d91714f4-5d53-425d-a120-0b7af24c09d5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/Manager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Manager/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/Planet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Planet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/State/UnitMovementState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/UnitMovementState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +43,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Script/Planet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Unit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/State/UnitPlanetConquestState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/State/UnitAttackDistState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/State/UnitMovementState.cs" root0="FORCE_HIGHLIGHTING" />
@@ -65,9 +68,10 @@
         <option value="$PROJECT_DIR$/Assets/Script/CameraMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Manager/SpawnPlanet.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Planet.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Planet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/State/UnitPlanetConquestState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Manager/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/State/UnitMovementState.cs" />
       </list>
@@ -141,6 +145,7 @@
       <workItem from="1618736572705" duration="2725000" />
       <workItem from="1618752413074" duration="678000" />
       <workItem from="1618849215764" duration="1852000" />
+      <workItem from="1619023824043" duration="2491000" />
     </task>
     <servers />
   </component>
@@ -173,9 +178,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.8.1920.1040@0.0.1920.1040" timestamp="1617887790693" />
-    <state x="623" y="225" width="672" height="160" key="search.everywhere.popup" timestamp="1618739051868">
+    <state x="623" y="225" width="672" height="160" key="search.everywhere.popup" timestamp="1619024362135">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="160" key="search.everywhere.popup/0.0.1920.1040/1920.8.1920.1040@0.0.1920.1040" timestamp="1618739051868" />
+    <state x="623" y="225" width="672" height="160" key="search.everywhere.popup/0.0.1920.1040/1920.8.1920.1040@0.0.1920.1040" timestamp="1619024362135" />
   </component>
 </project>

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -53,6 +54,16 @@ public class UnitMovementState : State
         return true;
     }
 
+    bool NotButton()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition),-Vector2.up);
+        if (hit.collider != null && hit.collider.gameObject.CompareTag("UI"))
+        {
+            return false;
+        }
+        return true;
+    }
+
 //=~= void Update 
     public override void Update()
     {
@@ -60,7 +71,7 @@ public class UnitMovementState : State
         Vector3Int coordinate = _gm.boardTilemap.WorldToCell(mouseWorldPos);
         Vector3 positionPlayer = _gm.boardTilemap.GetCellCenterLocal(coordinate);
         //move the player to the cell which was clicked
-        if (Input.GetMouseButtonDown(0) && _gm.moveTilemap.GetTile(coordinate) == _gm.movementTile && CanGoToTile(positionPlayer))
+        if (Input.GetMouseButtonDown(0) && _gm.moveTilemap.GetTile(coordinate) == _gm.movementTile && CanGoToTile(positionPlayer) && NotButton())
         {
             
             _unit.unitAnimator.SetBool("IsMoving", true);

@@ -46,15 +46,6 @@ public class UnitAttackState : State
                     unitAttackable.Add(unit);
                 }
             }
-
-            foreach (var planet in player.GetComponent<PlayerInfos>().planetOwnByPlayer)
-            {
-                if (planet.GetPos() == _unit.GetPos())
-                {
-                    //TODO demander si la conquête c'est un autre bouton ou si c'est le même que pour attaquer un vaisseau
-                    //unitAttackable.Add(planet);
-                }
-            }
         }
 
         return unitAttackable;

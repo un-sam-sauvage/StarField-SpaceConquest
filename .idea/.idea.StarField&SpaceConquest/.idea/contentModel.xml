@@ -40,6 +40,7 @@
             <e p="UnitAttackDistState.cs" t="Include" />
             <e p="UnitAttackState.cs" t="Include" />
             <e p="UnitMovementState.cs" t="Include" />
+            <e p="UnitPlanetConquestState.cs" t="Include" />
           </e>
           <e p="Unit.cs" t="Include" />
         </e>
