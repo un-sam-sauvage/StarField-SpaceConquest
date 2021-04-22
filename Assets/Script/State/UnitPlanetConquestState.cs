@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class UnitPlanetConquestState : State
 {
     private Unit _unit;
     private GameManager _gm;
-    
+    private Planet _planetConquerable;
+
     public UnitPlanetConquestState(Unit unit)
     {
         _unit = unit;
@@ -15,6 +14,13 @@ public class UnitPlanetConquestState : State
     public override void Enter()
     {
         _gm = GameManager.instance;
+        _planetConquerable = GetPlanetConquerable();
+        if (PlanetIsOwnByCurrentPlayer())
+        {
+            Debug.Log("La planète appartient déjà au joueur");
+            stage = Event.EXIT;
+        }
+
         base.Enter();
     }
 
@@ -31,16 +37,47 @@ public class UnitPlanetConquestState : State
         return null;
     }
 
-    public override void Update()
+    bool PlanetIsOwnByCurrentPlayer()
     {
-        if (GetPlanetConquerable() !=null)
+        foreach (var planet in _gm.currentPlayer.planetOwnByPlayer)
         {
-            Debug.Log("il y a une planète");
+            if (planet.GetPos() == _planetConquerable.GetPos())
+            {
+                return true;
+            }
         }
+
+        return false;
     }
 
-    public override void Exit()
+    public override void Update()
     {
-        base.Exit();
+        if (_planetConquerable.isConquered)
+        {
+            if (_planetConquerable.defense > 0)
+            {
+                int damage = _planetConquerable.defense - _unit.atk;
+                if (damage > 0)
+                {
+                    _planetConquerable.currentOwner.planetOwnByPlayer.Remove(_planetConquerable);
+                    _gm.currentPlayer.planetOwnByPlayer.Add(_planetConquerable);
+                    stage = Event.EXIT;
+                }
+                else if (damage < 0)
+                {
+                    _unit.life -= damage - _unit.shield;
+                    Debug.Log("la planète avait trop de défense");
+                    stage = Event.EXIT;
+                }
+                else
+                {
+                    Debug.Log("vous n'aviez pas assez d'attaque pour conquérir cette planète");
+                    stage = Event.EXIT;
+                }
+            }
+        }
+
+        _gm.currentPlayer.planetOwnByPlayer.Add(_planetConquerable);
+        stage = Event.EXIT;
     }
 }

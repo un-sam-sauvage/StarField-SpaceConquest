@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public Vector3 initialEnemiUnitPosition;
     [HideInInspector] public List<Planet> planets;
 
-    private PlayerInfos _currentPlayer;
+    public PlayerInfos currentPlayer;
 
     private int _turn;
 
@@ -60,8 +60,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _currentPlayer = players[_turn].GetComponent<PlayerInfos>();
-        currentPlayerUnits = _currentPlayer.units;
+        currentPlayer = players[_turn].GetComponent<PlayerInfos>();
+        currentPlayerUnits = currentPlayer.units;
     }
 
     private void Update()
@@ -88,8 +88,8 @@ public class GameManager : MonoBehaviour
             unit.hasPlayed = false;
         }
 
-        _currentPlayer = players[_turn].GetComponent<PlayerInfos>();
-        currentPlayerUnits = _currentPlayer.units;
+        currentPlayer = players[_turn].GetComponent<PlayerInfos>();
+        currentPlayerUnits = currentPlayer.units;
     }
 
     bool AllUnitsOfCurrentPlayerHasPlayed()
