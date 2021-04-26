@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7648675301921735189, guid: ed64bcbe88352a54782cb563dbf1ad4e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -95,6 +95,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be770bfcc7ee65c40a4f6403e22cb119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentOwner: {fileID: 0}
+  planetName: 
   popRessources: 0
   commonOreRessources: 0
   rareOreRessources: 0
+  defense: 0
+  isConquered: 0

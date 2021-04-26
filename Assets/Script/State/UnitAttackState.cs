@@ -16,7 +16,7 @@ public class UnitAttackState : State
     {
         _gm = GameManager.instance;
         _gm.selectUnitToAttack.AddListener(AttackUnit);
-        _gm.ShowUnitAttackable(_unit.GetPos() + new Vector3(2f, 0, 0), GetUnitAttackable());
+        _gm.ShowUnitAttackable(_unit.GetPos(), GetUnitAttackable());
         base.Enter();
     }
 

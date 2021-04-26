@@ -15,12 +15,15 @@ public class UnitPlanetConquestState : State
     {
         _gm = GameManager.instance;
         _planetConquerable = GetPlanetConquerable();
-        if (PlanetIsOwnByCurrentPlayer())
+        if (PlanetIsOwnByCurrentPlayer() || GetPlanetConquerable() == null)
         {
             Debug.Log("La planète appartient déjà au joueur");
             stage = Event.EXIT;
         }
-
+        else
+        {
+            PlanetConquest();
+        }
         base.Enter();
     }
 
@@ -50,7 +53,7 @@ public class UnitPlanetConquestState : State
         return false;
     }
 
-    public override void Update()
+    void PlanetConquest()
     {
         if (_planetConquerable.isConquered)
         {

@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using TMPro;
+using Unity.Mathematics;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Tilemaps;
@@ -11,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject buttonsUnit;
     public List<GameObject> players;
-
+    public List<GameObject> nbUnitOnTile;
     public GameObject panelUIUnitAttackable;
 
     public Tilemap boardTilemap;
@@ -200,10 +202,11 @@ public class GameManager : MonoBehaviour
     public void ShowUnitAttackable(Vector3 posOfPanel, List<Unit> unitAttackable)
     {
         _unitAttackable = unitAttackable;
-        panelUIUnitAttackable.transform.position = posOfPanel;
+        panelUIUnitAttackable.transform.position = posOfPanel +  new Vector3(2f, 0, 0);
         panelUIUnitAttackable.SetActive(true);
         for (int i = 0; i < unitAttackable.Count; i++)
         {
+            unitsAttackableButton[i].gameObject.SetActive(true);
             unitsAttackableButton[i].GetComponentInChildren<TextMeshProUGUI>().text = unitAttackable[i].unitName;
         }
 
@@ -225,16 +228,17 @@ public class GameManager : MonoBehaviour
         {
             unitsAttackableButton[0].gameObject.SetActive(true);
             unitsAttackableButton[0].GetComponentInChildren<TextMeshProUGUI>().text = "no Unit attackable";
+            var padding = panelUIUnitAttackable.GetComponent<RectMask2D>().padding;
+            padding.y = 210;
+            panelUIUnitAttackable.GetComponent<RectMask2D>().padding = padding;
         }
         else
         {
             var padding = panelUIUnitAttackable.GetComponent<RectMask2D>().padding;
-            padding.y = 185 - 58 * (nbActiveButton - 1);
+            padding.y = 210 - 58 * (nbActiveButton - 1);
             panelUIUnitAttackable.GetComponent<RectMask2D>().padding = padding;
         }
     }
-
-
     public void SelectUnitToAttack(int buttonIndex)
     {
         foreach (var unit in _unitAttackable)
@@ -249,4 +253,9 @@ public class GameManager : MonoBehaviour
 
         Debug.LogWarning("Aucune unité correspondante");
     }
+    public void NbUnitOnTile(int nbUnit,Vector3 posGO)
+    {
+        Instantiate(nbUnitOnTile[nbUnit--],posGO - new Vector3(0,.5f,0),quaternion.identity);
+    }
+
 }

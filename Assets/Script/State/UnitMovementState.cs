@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 
 
 public class UnitMovementState : State
@@ -32,8 +30,8 @@ public class UnitMovementState : State
 
         base.Enter();
     }
-
-    bool CanGoToTile(Vector3 tile)
+    
+    int CanGoToTile(Vector3 tile)
     {
         int nbUnitOnTile = 1;
         foreach (var player in _gm.players)
@@ -46,24 +44,11 @@ public class UnitMovementState : State
                 }
             }
         }
-        if (nbUnitOnTile >= 4)
-        {
-            return false;
-        }
 
-        return true;
+        return nbUnitOnTile;
     }
 
-    bool NotButton()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition),-Vector2.up);
-        if (hit.collider != null && hit.collider.gameObject.CompareTag("UI"))
-        {
-            return false;
-        }
-        return true;
-    }
-
+    
 //=~= void Update 
     public override void Update()
     {
@@ -71,9 +56,9 @@ public class UnitMovementState : State
         Vector3Int coordinate = _gm.boardTilemap.WorldToCell(mouseWorldPos);
         Vector3 positionPlayer = _gm.boardTilemap.GetCellCenterLocal(coordinate);
         //move the player to the cell which was clicked
-        if (Input.GetMouseButtonDown(0) && _gm.moveTilemap.GetTile(coordinate) == _gm.movementTile && CanGoToTile(positionPlayer) && NotButton())
+        if (Input.GetMouseButtonDown(0) && _gm.moveTilemap.GetTile(coordinate) == _gm.movementTile &&
+            CanGoToTile(positionPlayer) <= 4)
         {
-            
             _unit.unitAnimator.SetBool("IsMoving", true);
             _unit.Move(positionPlayer);
         }

@@ -1,5 +1,7 @@
-﻿using DG.Tweening;
+﻿using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Unit : MonoBehaviour
 {
@@ -72,20 +74,38 @@ public class Unit : MonoBehaviour
     }
     public void OnMouseDown()
     {
+        List<Unit> unitCanGet = new List<Unit>();
         _gm = GameManager.instance;
         _gm.unitSelectedForAttack = gameObject;
-        foreach (var unit in _gm.currentPlayerUnits)
+        _gm.selectUnitToAttack.AddListener(UnitSelectedToPlay);
+        if (_gm.currentUnit == null && !hasPlayed)
         {
-            if (unit == this && _gm.currentUnit == null && !hasPlayed)
+            foreach (var unit in _gm.currentPlayerUnits)
             {
-                _gm.currentUnit = this;
-                _gm.ShowCurrentUnitInfos(this);
-                _gm.initialUnitPosition = GetPos();
-                _gm.ShowUIforUnit(true);
+                if (unit.GetPos() == GetPos() && !unit.hasPlayed)
+                {
+                    
+                    unitCanGet.Add(unit);
+                }
             }
+        }
+
+        if (unitCanGet.Count >0)
+        {
+            _gm.ShowUnitAttackable(GetPos(), unitCanGet);
         }
     }
 
+    void UnitSelectedToPlay()
+    {
+        Unit unitSelected = _gm.unitSelectedForAttack.GetComponent<Unit>();
+        _gm.currentUnit = unitSelected;
+        _gm.ShowCurrentUnitInfos(unitSelected);
+        _gm.initialUnitPosition = unitSelected.GetPos();
+        _gm.ShowUIforUnit(true);
+        _gm.panelUIUnitAttackable.SetActive(false);
+    }
+    
     public void TriggerDeadByAnimation()
     {
         gameObject.SetActive(false);

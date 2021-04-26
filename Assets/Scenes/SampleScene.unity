@@ -204,7 +204,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.35
+  m_fontSize: 30.65
   m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -266,7 +266,6 @@ GameObject:
   - component: {fileID: 17070342}
   - component: {fileID: 17070341}
   - component: {fileID: 17070340}
-  - component: {fileID: 17070343}
   m_Layer: 5
   m_Name: UnitAttack
   m_TagString: UI
@@ -385,32 +384,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17070338}
   m_CullTransparentMesh: 0
---- !u!61 &17070343
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 17070338}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 310, y: 75}
-  m_EdgeRadius: 0
 --- !u!1 &33749335
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,6 +498,11 @@ MonoBehaviour:
   players:
   - {fileID: 1259129468}
   - {fileID: 490718527}
+  nbUnitOnTile:
+  - {fileID: 7593613133414982702, guid: 9a9ac92b7ee1e3d43b311e3569409edf, type: 3}
+  - {fileID: 7593613133414982702, guid: 9a9ac92b7ee1e3d43b311e3569409edf, type: 3}
+  - {fileID: 7593613133414982702, guid: 9a9ac92b7ee1e3d43b311e3569409edf, type: 3}
+  - {fileID: 7593613133414982702, guid: 9a9ac92b7ee1e3d43b311e3569409edf, type: 3}
   panelUIUnitAttackable: {fileID: 1422662935}
   boardTilemap: {fileID: 2009738192}
   moveTilemap: {fileID: 1571431949}
@@ -539,6 +517,7 @@ MonoBehaviour:
   initialUnitPosition: {x: 0, y: 0, z: 0}
   initialEnemiUnitPosition: {x: 0, y: 0, z: 0}
   planets: []
+  currentPlayer: {fileID: 0}
   unitLife: {fileID: 271207889}
   unitName: {fileID: 508524759}
   unitMovement: {fileID: 210443383}
@@ -649,7 +628,6 @@ GameObject:
   - component: {fileID: 72767095}
   - component: {fileID: 72767094}
   - component: {fileID: 72767093}
-  - component: {fileID: 72767096}
   m_Layer: 5
   m_Name: ResetMove
   m_TagString: UI
@@ -768,32 +746,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72767091}
   m_CullTransparentMesh: 0
---- !u!61 &72767096
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 72767091}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 310, y: 75}
-  m_EdgeRadius: 0
 --- !u!1 &87659988
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,7 +829,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38.6
+  m_fontSize: 44.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1134,7 +1086,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.6
+  m_fontSize: 30.95
   m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1266,7 +1218,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -959151340152966055, guid: e89c5129f68d7ec4a861aadf9edc39fd,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1948,7 +1900,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.45
+  m_fontSize: 30.95
   m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2010,7 +1962,6 @@ GameObject:
   - component: {fileID: 334928631}
   - component: {fileID: 334928630}
   - component: {fileID: 334928629}
-  - component: {fileID: 334928632}
   m_Layer: 5
   m_Name: UnitConquest
   m_TagString: UI
@@ -2129,32 +2080,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334928627}
   m_CullTransparentMesh: 0
---- !u!61 &334928632
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 334928627}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 310, y: 75}
-  m_EdgeRadius: 0
 --- !u!1 &375518726
 GameObject:
   m_ObjectHideFlags: 0
@@ -2368,7 +2293,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.5
+  m_fontSize: 30.7
   m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2577,6 +2502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50861fb2803ec7e46b69f451246bffa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerName: 
   units:
   - {fileID: 2043763209}
   - {fileID: 214436984}
@@ -2680,7 +2606,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.55
+  m_fontSize: 30.9
   m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2933,7 +2859,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 61.6
+  m_fontSize: 70.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2995,7 +2921,6 @@ GameObject:
   - component: {fileID: 631138271}
   - component: {fileID: 631138270}
   - component: {fileID: 631138269}
-  - component: {fileID: 631138272}
   m_Layer: 5
   m_Name: NextUnit
   m_TagString: UI
@@ -3114,32 +3039,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631138267}
   m_CullTransparentMesh: 0
---- !u!61 &631138272
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 631138267}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 310, y: 75}
-  m_EdgeRadius: 0
 --- !u!1 &678322174
 GameObject:
   m_ObjectHideFlags: 0
@@ -3720,7 +3619,6 @@ GameObject:
   - component: {fileID: 753120464}
   - component: {fileID: 753120466}
   - component: {fileID: 753120465}
-  - component: {fileID: 753120467}
   m_Layer: 5
   m_Name: UnitStats
   m_TagString: UI
@@ -3789,32 +3687,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753120463}
   m_CullTransparentMesh: 0
---- !u!61 &753120467
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 753120463}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.6278229, y: -0.0014801025}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 153.41605, y: 225.32056}
-  m_EdgeRadius: 0
 --- !u!1 &851186889
 GameObject:
   m_ObjectHideFlags: 0
@@ -4285,7 +4157,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -959151340152966055, guid: e89c5129f68d7ec4a861aadf9edc39fd,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4440,7 +4312,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 61.45
+  m_fontSize: 70.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5161,7 +5033,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 61.6
+  m_fontSize: 70.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5306,6 +5178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50861fb2803ec7e46b69f451246bffa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerName: 
   units:
   - {fileID: 1498134349}
   - {fileID: 1031990586}
@@ -5655,9 +5528,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422662935}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1383765, y: 1.1383765, z: 1.1383765}
   m_Children:
   - {fileID: 151392892}
   m_Father: {fileID: 255636961}
@@ -5665,8 +5538,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -394.72998, y: 145.18}
-  m_SizeDelta: {x: -789.4678, y: -290.3631}
+  m_AnchoredPosition: {x: 1271322.6, y: -467587}
+  m_SizeDelta: {x: -922.46796, y: -365.3631}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1422662937
 MonoBehaviour:
@@ -5680,7 +5553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Padding: {x: 0, y: 185, z: 0, w: 0}
+  m_Padding: {x: 0, y: 210, z: 0, w: 0}
   m_Softness: {x: 0, y: 0}
 --- !u!114 &1422662938
 MonoBehaviour:
@@ -6062,7 +5935,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -959151340152966055, guid: e89c5129f68d7ec4a861aadf9edc39fd,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6277,7 +6150,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -3
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -7244,7 +7117,6 @@ GameObject:
   - component: {fileID: 1867826939}
   - component: {fileID: 1867826938}
   - component: {fileID: 1867826937}
-  - component: {fileID: 1867826940}
   m_Layer: 5
   m_Name: UnitMove
   m_TagString: UI
@@ -7363,32 +7235,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867826935}
   m_CullTransparentMesh: 0
---- !u!61 &1867826940
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1867826935}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 310, y: 75}
-  m_EdgeRadius: 0
 --- !u!1 &1869035160
 GameObject:
   m_ObjectHideFlags: 0
@@ -7472,7 +7318,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 61.45
+  m_fontSize: 70.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8028,7 +7874,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -3
+  m_SortingOrder: -4
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.032777727, y: 0.046760082, z: 0}
   m_MaxChunkCount: 16
@@ -10281,7 +10127,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -959151340152966055, guid: e89c5129f68d7ec4a861aadf9edc39fd,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
