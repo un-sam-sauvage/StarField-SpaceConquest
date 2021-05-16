@@ -61,6 +61,11 @@ public class UnitMovementState : State
         {
             _unit.unitAnimator.SetBool("IsMoving", true);
             _unit.Move(positionPlayer);
+            if (CanGoToTile(positionPlayer) > 1)
+            {
+                _gm.NbUnitOnTile(CanGoToTile(positionPlayer),positionPlayer);
+            }
+            stage = Event.EXIT;
         }
     }
 

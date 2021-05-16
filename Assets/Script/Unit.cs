@@ -15,18 +15,18 @@ public class Unit : MonoBehaviour
 
     [HideInInspector] public Animator unitAnimator;
 
-    [HideInInspector]public bool hasPlayed;
-    [HideInInspector]public bool hasAttacked;
-    [HideInInspector]public bool hasMoved;
-    
+    [HideInInspector] public bool hasPlayed;
+    [HideInInspector] public bool hasAttacked;
+    [HideInInspector] public bool hasMoved;
+
     private State _currentState;
-    
+
     public string unitName;
-    
+
     public ScriptableUnit thisUnit;
 
     private GameManager _gm;
-    
+
     private void Awake()
     {
         unitType = thisUnit.type;
@@ -47,14 +47,14 @@ public class Unit : MonoBehaviour
     public void Move(Vector3 positionToGo)
     {
         Rotate(positionToGo);
-        transform.DOMove(positionToGo, 1f).OnComplete(()=> unitAnimator.SetBool("IsMoving", false));
+        transform.DOMove(positionToGo, 1f).OnComplete(() => unitAnimator.SetBool("IsMoving", false));
     }
 
     public void Rotate(Vector3 positionToLookAt)
     {
         Vector3 dir = positionToLookAt - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.DORotate(new Vector3(0,0,Quaternion.AngleAxis(angle-90, Vector3.forward).z*100), .35f);
+        transform.DORotate(new Vector3(0, 0, Quaternion.AngleAxis(angle - 90, Vector3.forward).z * 100), .35f);
     }
 
     public void SetState(State state)
@@ -72,6 +72,7 @@ public class Unit : MonoBehaviour
     {
         return _currentState;
     }
+
     public void OnMouseDown()
     {
         List<Unit> unitCanGet = new List<Unit>();
@@ -84,13 +85,12 @@ public class Unit : MonoBehaviour
             {
                 if (unit.GetPos() == GetPos() && !unit.hasPlayed)
                 {
-                    
                     unitCanGet.Add(unit);
                 }
             }
         }
 
-        if (unitCanGet.Count >0)
+        if (unitCanGet.Count > 0)
         {
             _gm.ShowUnitAttackable(GetPos(), unitCanGet);
         }
@@ -105,7 +105,7 @@ public class Unit : MonoBehaviour
         _gm.ShowUIforUnit(true);
         _gm.panelUIUnitAttackable.SetActive(false);
     }
-    
+
     public void TriggerDeadByAnimation()
     {
         gameObject.SetActive(false);

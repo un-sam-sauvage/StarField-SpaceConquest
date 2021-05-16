@@ -43,6 +43,7 @@ public class UnitAttackState : State
                 if (_gm.boardTilemap.WorldToCell(unit.GetPos()) == _gm.boardTilemap.WorldToCell(_unit.GetPos()) &&
                     !IsInMyTeam(unit))
                 {
+                    Debug.Log(unit.unitName);
                     unitAttackable.Add(unit);
                 }
             }

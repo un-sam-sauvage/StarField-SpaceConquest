@@ -202,7 +202,7 @@ public class GameManager : MonoBehaviour
     public void ShowUnitAttackable(Vector3 posOfPanel, List<Unit> unitAttackable)
     {
         _unitAttackable = unitAttackable;
-        panelUIUnitAttackable.transform.position = posOfPanel +  new Vector3(2f, 0, 0);
+        panelUIUnitAttackable.transform.position = posOfPanel + new Vector3(2f, 0, 0);
         panelUIUnitAttackable.SetActive(true);
         for (int i = 0; i < unitAttackable.Count; i++)
         {
@@ -239,6 +239,7 @@ public class GameManager : MonoBehaviour
             panelUIUnitAttackable.GetComponent<RectMask2D>().padding = padding;
         }
     }
+
     public void SelectUnitToAttack(int buttonIndex)
     {
         foreach (var unit in _unitAttackable)
@@ -251,11 +252,12 @@ public class GameManager : MonoBehaviour
             }
         }
 
+
         Debug.LogWarning("Aucune unité correspondante");
     }
-    public void NbUnitOnTile(int nbUnit,Vector3 posGO)
-    {
-        Instantiate(nbUnitOnTile[nbUnit--],posGO - new Vector3(0,.5f,0),quaternion.identity);
-    }
 
+    public void NbUnitOnTile(int nbUnit, Vector3 posGO)
+    {
+        Instantiate(nbUnitOnTile[nbUnit--], posGO - new Vector3(0, .5f, 0), quaternion.identity);
+    }
 }
