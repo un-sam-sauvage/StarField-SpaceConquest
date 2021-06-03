@@ -90,7 +90,7 @@ public class SpawnPlanet : MonoBehaviour
 
         foreach (var tile in  DrawPlayerMovement.GetMovableTile(8,Vector3.zero))
         {
-            _gm.moveTilemap.SetTile(_gm.boardTilemap.WorldToCell(tile), tilesToInstantiate[Random.Range(0,tilesToInstantiate.Count)]);
+            _gm.boardTilemap.SetTile(_gm.boardTilemap.WorldToCell(tile), tilesToInstantiate[Random.Range(0,tilesToInstantiate.Count)]);
         }
     }
 }

@@ -21,8 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d91714f4-5d53-425d-a120-0b7af24c09d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Préfab/TextUnit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Préfab/TextUnit.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/Manager/SpawnPlanet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Manager/SpawnPlanet.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,10 +64,10 @@
         <option value="$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Planet.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/State/UnitPlanetConquestState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/State/UnitMovementState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Manager/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/State/UnitMovementState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Manager/SpawnPlanet.cs" />
       </list>
     </option>
@@ -150,6 +149,7 @@
       <workItem from="1621325188975" duration="124000" />
       <workItem from="1621442228843" duration="605000" />
       <workItem from="1622746976233" duration="1342000" />
+      <workItem from="1622760305988" duration="736000" />
     </task>
     <servers />
   </component>
