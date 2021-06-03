@@ -7,6 +7,10 @@ public class SpawnPlanet : MonoBehaviour
 {
     public List<GameObject> planets;
     public List<ZonesToInstantiatesPlanet> zonesToInstantiatePlanets;
+
+    public List<Tile> tilesToInstantiate;
+
+    private GameManager _gm;
     //get a given sample of all tile
     List<Vector3> GetTileForPlanet(Vector3 start, Tilemap tilemap)
     {
@@ -70,6 +74,7 @@ public class SpawnPlanet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _gm = GameManager.instance;
         foreach (var zone in zonesToInstantiatePlanets)
         {
             List<Vector3> whereToInstantiate = GetTileForPlanet(zone.start, zone.zoneToInstantiatePlanet);
@@ -81,6 +86,11 @@ public class SpawnPlanet : MonoBehaviour
             planet.commonOreRessources = zone.commonOreRessources;
             planet.rareOreRessources = zone.rareOreRessources;
             GameManager.instance.planets.Add(planet);
+        }
+
+        foreach (var tile in  DrawPlayerMovement.GetMovableTile(8,Vector3.zero))
+        {
+            _gm.moveTilemap.SetTile(_gm.boardTilemap.WorldToCell(tile), tilesToInstantiate[Random.Range(0,tilesToInstantiate.Count)]);
         }
     }
 }
