@@ -79,7 +79,7 @@ public class Unit : MonoBehaviour
         _gm = GameManager.instance;
         _gm.unitSelectedForAttack = gameObject;
         _gm.selectUnitToAttack.AddListener(UnitSelectedToPlay);
-        if (_gm.currentUnit == null && !hasPlayed)
+        if (_gm.currentUnit == null)
         {
             foreach (var unit in _gm.currentPlayerUnits)
             {

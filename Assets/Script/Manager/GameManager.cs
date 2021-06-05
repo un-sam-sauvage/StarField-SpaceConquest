@@ -12,10 +12,13 @@ public class GameManager : MonoBehaviour
     public State currentState;
 
     public GameObject buttonsUnit;
-    public List<GameObject> players;
-    public List<GameObject> nbUnitOnTile;
     public GameObject panelUIUnitAttackable;
 
+    public List<GameObject> players;
+    public List<GameObject> nbUnitOnTile;
+    
+    private List<GameObject> _nbUnitOnCase = new List<GameObject>();
+    
     public Tilemap boardTilemap;
     public Tilemap moveTilemap;
 
@@ -39,7 +42,8 @@ public class GameManager : MonoBehaviour
     private int _turn;
 
     private bool _isInMovementMode;
-
+    
+    
     [Header("Text UI Infos Unit")] public TextMeshProUGUI unitLife;
     public TextMeshProUGUI unitName;
     public TextMeshProUGUI unitMovement;
@@ -258,6 +262,16 @@ public class GameManager : MonoBehaviour
 
     public void NbUnitOnTile(int nbUnit, Vector3 posGO)
     {
-        Instantiate(nbUnitOnTile[nbUnit--], posGO - new Vector3(0, .5f, 0), quaternion.identity);
+        GameObject obj = Instantiate(nbUnitOnTile[nbUnit--], posGO - new Vector3(0, .5f, 0), quaternion.identity);
+        foreach (var item in _nbUnitOnCase)
+        {
+            if (item.transform.position == obj.transform.position)
+            {
+                Debug.Log("je détruis l'item");
+                Destroy(item);
+            }
+        }
+        obj.GetComponentInChildren<TextMeshPro>().text = $"{nbUnit+1}";
+        _nbUnitOnCase.Add(obj);
     }
 }
