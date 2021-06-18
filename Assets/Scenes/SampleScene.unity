@@ -495,6 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonsUnit: {fileID: 33749335}
+  panelUIUnitAttackable: {fileID: 1422662935}
   players:
   - {fileID: 1259129468}
   - {fileID: 490718527}
@@ -503,15 +504,14 @@ MonoBehaviour:
   - {fileID: 7593613133414982702, guid: 9a9ac92b7ee1e3d43b311e3569409edf, type: 3}
   - {fileID: 7593613133414982702, guid: 9a9ac92b7ee1e3d43b311e3569409edf, type: 3}
   - {fileID: 7593613133414982702, guid: 9a9ac92b7ee1e3d43b311e3569409edf, type: 3}
-  panelUIUnitAttackable: {fileID: 1422662935}
   boardTilemap: {fileID: 2009738192}
   moveTilemap: {fileID: 1571431949}
   movementTile: {fileID: 11400000, guid: 722a541960945674292569aa098befc1, type: 2}
   attackTile: {fileID: 0}
   currentPlayerUnits: []
-  unitSelectedForAttack: {fileID: 0}
+  unitSelected: {fileID: 0}
   currentUnit: {fileID: 0}
-  selectUnitToAttack:
+  selectUnit:
     m_PersistentCalls:
       m_Calls: []
   initialUnitPosition: {x: 0, y: 0, z: 0}
@@ -1180,12 +1180,12 @@ MonoBehaviour:
   atk: 0
   shield: 0
   life: 0
-  attackRange: 0
   unitType: 
   unitAnimator: {fileID: 0}
   hasPlayed: 0
   hasAttacked: 0
   hasMoved: 0
+  hasUsedSpecialEffect: 0
   unitName: "R\xE9gis"
   thisUnit: {fileID: 11400000, guid: f7d12bb300bee244484b42fcfe8e8658, type: 2}
 --- !u!212 &214436985
@@ -2171,7 +2171,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 40018122}
-        m_MethodName: SelectUnitToAttack
+        m_MethodName: UnitIsSelected
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2434,7 +2434,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 40018122}
-        m_MethodName: SelectUnitToAttack
+        m_MethodName: UnitIsSelected
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4036,7 +4036,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 40018122}
-        m_MethodName: SelectUnitToAttack
+        m_MethodName: UnitIsSelected
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4119,12 +4119,12 @@ MonoBehaviour:
   atk: 0
   shield: 0
   life: 0
-  attackRange: 0
   unitType: 
   unitAnimator: {fileID: 0}
   hasPlayed: 0
   hasAttacked: 0
   hasMoved: 0
+  hasUsedSpecialEffect: 0
   unitName: Gontran
   thisUnit: {fileID: 11400000, guid: b2372aa408345ec4086ca3de914511da, type: 2}
 --- !u!212 &1031990587
@@ -5898,6 +5898,7 @@ GameObject:
   - component: {fileID: 1498134349}
   - component: {fileID: 1498134350}
   - component: {fileID: 1498134351}
+  - component: {fileID: 1498134352}
   m_Layer: 0
   m_Name: unit1
   m_TagString: Untagged
@@ -5986,12 +5987,12 @@ MonoBehaviour:
   atk: 0
   shield: 0
   life: 0
-  attackRange: 0
   unitType: 
   unitAnimator: {fileID: 0}
   hasPlayed: 0
   hasAttacked: 0
   hasMoved: 0
+  hasUsedSpecialEffect: 0
   unitName: Bernard
   thisUnit: {fileID: 11400000, guid: f7d12bb300bee244484b42fcfe8e8658, type: 2}
 --- !u!61 &1498134350
@@ -6039,6 +6040,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1498134352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498134346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd8e8f6a8986144886d11482c5f06b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1571431948
 GameObject:
   m_ObjectHideFlags: 0
@@ -8057,7 +8070,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 40018122}
-        m_MethodName: SelectUnitToAttack
+        m_MethodName: UnitIsSelected
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8140,12 +8153,12 @@ MonoBehaviour:
   atk: 0
   shield: 0
   life: 0
-  attackRange: 0
   unitType: 
   unitAnimator: {fileID: 0}
   hasPlayed: 0
   hasAttacked: 0
   hasMoved: 0
+  hasUsedSpecialEffect: 0
   unitName: "St\xE9phane"
   thisUnit: {fileID: 11400000, guid: f7d12bb300bee244484b42fcfe8e8658, type: 2}
 --- !u!212 &2043763210

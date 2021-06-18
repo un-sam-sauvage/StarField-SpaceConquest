@@ -27,11 +27,11 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public List<Unit> currentPlayerUnits;
 
-    [HideInInspector] public GameObject unitSelectedForAttack;
+    [HideInInspector] public GameObject unitSelected;
 
     [HideInInspector] public Unit currentUnit;
 
-    [HideInInspector] public UnityEvent selectUnitToAttack;
+    [HideInInspector] public UnityEvent selectUnit;
 
     [HideInInspector] public Vector3 initialUnitPosition;
     [HideInInspector] public Vector3 initialEnemiUnitPosition;
@@ -116,7 +116,7 @@ public class GameManager : MonoBehaviour
         currentState?.Exit();
         if (currentUnit.GetComponent<Unit>().hasAttacked)
         {
-            unitSelectedForAttack.GetComponent<Unit>().Move(initialEnemiUnitPosition);
+            unitSelected.GetComponent<Unit>().Move(initialEnemiUnitPosition);
         }
 
         currentUnit.hasPlayed = true;
@@ -147,6 +147,11 @@ public class GameManager : MonoBehaviour
             currentUnit.SetState(new UnitAttackState(currentUnit));
             currentState = currentUnit.GetState();
             currentUnit.hasAttacked = true;
+            if (currentUnit.thisUnit.shipTier == ScriptableUnit.Tier.Tier3)
+            {
+                currentUnit.hasMoved = true;
+                //TODO rendre le bouton de l'attack non interactable
+            }
         }
         else
         {
@@ -163,6 +168,11 @@ public class GameManager : MonoBehaviour
             currentUnit.SetState(new UnitMovementState(currentUnit));
             currentState = new UnitMovementState(currentUnit);
             currentUnit.hasMoved = true;
+            if (currentUnit.thisUnit.shipTier == ScriptableUnit.Tier.Tier3)
+            {
+                currentUnit.hasAttacked = true;
+                //TODO rendre le bouton de l'attack non interactable
+            }
         }
         else
         {
@@ -188,6 +198,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SetUnitToSpecialMode()
+    {
+        _isInMovementMode = false;
+        currentState?.Exit();
+        if (currentUnit != null && !currentUnit.hasUsedSpecialEffect)
+        {
+            currentUnit.gameObject.GetComponent<SpecialEffectShip>().Use(currentUnit);
+            currentUnit.hasUsedSpecialEffect = true;
+        }
+        else
+        {
+            //TODO rendre le bouton non interctable
+            Debug.Log("l'effet spécial de l'unité a déjà été utilisé");
+        }
+    }
     public void ResetUnitMovement()
     {
         if (_isInMovementMode)
@@ -203,18 +228,18 @@ public class GameManager : MonoBehaviour
 
     private List<Unit> _unitAttackable;
 
-    public void ShowUnitAttackable(Vector3 posOfPanel, List<Unit> unitAttackable)
+    public void ShowUnitSelectable(Vector3 posOfPanel, List<Unit> unitSelectable)
     {
-        _unitAttackable = unitAttackable;
+        _unitAttackable = unitSelectable;
         panelUIUnitAttackable.transform.position = posOfPanel + new Vector3(2f, 0, 0);
         panelUIUnitAttackable.SetActive(true);
-        for (int i = 0; i < unitAttackable.Count; i++)
+        for (int i = 0; i < unitSelectable.Count; i++)
         {
             unitsAttackableButton[i].gameObject.SetActive(true);
-            unitsAttackableButton[i].GetComponentInChildren<TextMeshProUGUI>().text = unitAttackable[i].unitName;
+            unitsAttackableButton[i].GetComponentInChildren<TextMeshProUGUI>().text = unitSelectable[i].unitName;
         }
 
-        for (int i = unitAttackable.Count; i < unitsAttackableButton.Count; i++)
+        for (int i = unitSelectable.Count; i < unitsAttackableButton.Count; i++)
         {
             unitsAttackableButton[i].gameObject.SetActive(false);
         }
@@ -244,14 +269,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SelectUnitToAttack(int buttonIndex)
+    public void UnitIsSelected(int buttonIndex)
     {
         foreach (var unit in _unitAttackable)
         {
             if (unitsAttackableButton[buttonIndex].GetComponentInChildren<TextMeshProUGUI>().text == unit.unitName)
             {
-                unitSelectedForAttack = unit.gameObject;
-                selectUnitToAttack.Invoke();
+                unitSelected = unit.gameObject;
+                selectUnit.Invoke();
                 return;
             }
         }

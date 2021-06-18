@@ -15,11 +15,11 @@ public class UnitAttackDistState : State
     public override void Enter()
     {
         _gm = GameManager.instance;
-        foreach (var tile in DrawPlayerMovement.GetMovableTile(_unit.attackRange ,_unit.GetPos()))
+        /*foreach (var tile in DrawPlayerMovement.GetMovableTile(_unit.attackRange ,_unit.GetPos()))
         {
             _gm.boardTilemap.SetTile(_gm.boardTilemap.WorldToCell(tile), _gm.attackTile);
             _tileToClear.Add(tile);
-        }
+        }*/
 
         base.Enter();
     }
@@ -28,7 +28,7 @@ public class UnitAttackDistState : State
     {
         foreach (var unit in _gm.currentPlayerUnits)
         {
-            if (_gm.unitSelectedForAttack.GetComponent<Unit>() == unit)
+            if (_gm.unitSelected.GetComponent<Unit>() == unit)
             {
                 return true;
             }
@@ -43,11 +43,11 @@ public class UnitAttackDistState : State
         Vector3Int coordinate = _gm.boardTilemap.WorldToCell(mouseWorldPos);
 
         if (Input.GetMouseButtonDown(0) && _gm.boardTilemap.GetTile(coordinate) == _gm.attackTile &&
-            _gm.boardTilemap.WorldToCell(_gm.unitSelectedForAttack.transform.position) == coordinate && !IsInMyTeam())
+            _gm.boardTilemap.WorldToCell(_gm.unitSelected.transform.position) == coordinate && !IsInMyTeam())
         {
             Debug.Log("j'attaque cette unité");
-            Unit unitAttacked = _gm.unitSelectedForAttack.GetComponent<Unit>();
-            _unit.Rotate(_gm.unitSelectedForAttack.transform.position);
+            Unit unitAttacked = _gm.unitSelected.GetComponent<Unit>();
+            _unit.Rotate(_gm.unitSelected.transform.position);
             int damageDone = _unit.atk - unitAttacked.shield;
             if (damageDone > 0)
             {

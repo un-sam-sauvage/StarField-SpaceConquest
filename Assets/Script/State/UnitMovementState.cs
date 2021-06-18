@@ -19,6 +19,7 @@ public class UnitMovementState : State
     public override void Enter()
     {
         _gm = GameManager.instance;
+        _gm.ShowUIforUnit(false);
         foreach (var tile in DrawPlayerMovement.GetMovableTile(_range, _unit.GetPos()))
         {
             if (_gm.boardTilemap.GetTile(_gm.boardTilemap.WorldToCell(tile)) != null)
@@ -72,6 +73,7 @@ public class UnitMovementState : State
 //sortir du script
     public override void Exit()
     {
+        _gm.ShowUIforUnit(true);
         foreach (var tile in _tileToClear)
         {
             _gm.moveTilemap.SetTile(_gm.moveTilemap.WorldToCell(tile), null);

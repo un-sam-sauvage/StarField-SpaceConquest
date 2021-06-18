@@ -9,7 +9,6 @@ public class Unit : MonoBehaviour
     [HideInInspector] public int atk;
     [HideInInspector] public int shield;
     [HideInInspector] public int life;
-    [HideInInspector] public int attackRange;
 
     [HideInInspector] public string unitType;
 
@@ -18,6 +17,7 @@ public class Unit : MonoBehaviour
     [HideInInspector] public bool hasPlayed;
     [HideInInspector] public bool hasAttacked;
     [HideInInspector] public bool hasMoved;
+    [HideInInspector] public bool hasUsedSpecialEffect;
 
     private State _currentState;
 
@@ -34,7 +34,6 @@ public class Unit : MonoBehaviour
         atk = thisUnit.atk;
         shield = thisUnit.shield;
         life = thisUnit.life;
-        attackRange = thisUnit.attackRange;
         unitAnimator = GetComponent<Animator>();
         unitAnimator.runtimeAnimatorController = thisUnit.animator;
     }
@@ -77,8 +76,8 @@ public class Unit : MonoBehaviour
     {
         List<Unit> unitCanGet = new List<Unit>();
         _gm = GameManager.instance;
-        _gm.unitSelectedForAttack = gameObject;
-        _gm.selectUnitToAttack.AddListener(UnitSelectedToPlay);
+        _gm.unitSelected = gameObject;
+        _gm.selectUnit.AddListener(UnitSelectedToPlay);
         if (_gm.currentUnit == null)
         {
             foreach (var unit in _gm.currentPlayerUnits)
@@ -92,22 +91,24 @@ public class Unit : MonoBehaviour
 
         if (unitCanGet.Count > 0)
         {
-            _gm.ShowUnitAttackable(GetPos(), unitCanGet);
+            _gm.ShowUnitSelectable(GetPos(), unitCanGet);
         }
     }
 
     void UnitSelectedToPlay()
     {
-        Unit unitSelected = _gm.unitSelectedForAttack.GetComponent<Unit>();
+        Unit unitSelected = _gm.unitSelected.GetComponent<Unit>();
         _gm.currentUnit = unitSelected;
         _gm.ShowCurrentUnitInfos(unitSelected);
         _gm.initialUnitPosition = unitSelected.GetPos();
         _gm.ShowUIforUnit(true);
         _gm.panelUIUnitAttackable.SetActive(false);
+        _gm.SetUnitToSpecialMode();
     }
 
     public void TriggerDeadByAnimation()
     {
+        //TODO mort de l'unité
         gameObject.SetActive(false);
         Debug.Log("l'unité a été détruite");
     }

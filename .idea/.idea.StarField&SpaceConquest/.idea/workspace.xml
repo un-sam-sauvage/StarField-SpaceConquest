@@ -20,10 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d91714f4-5d53-425d-a120-0b7af24c09d5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Préfab/TextUnit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Préfab/TextUnit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/Manager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Manager/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/State/UnitAttackDistState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/UnitAttackDistState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/State/UnitMovementState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/UnitMovementState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Unit.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Unit.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,15 +40,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Planet.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Unit.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Unit/Race1/SpecialIEM.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/State/UnitPlanetConquestState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/State/UnitAttackDistState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/State/UnitMovementState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialCarapateur.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/State/UnitPlanetConquestState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Unit/SpecialEffectShip.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialBiomasse.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -55,7 +64,6 @@
         <option value="$PROJECT_DIR$/Assets/Script/PlayerMovementState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/ScriptableUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/CameraController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/State/PlayerMovementState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/State/State.cs" />
@@ -65,11 +73,18 @@
         <option value="$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Planet.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/State/UnitPlanetConquestState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/State/UnitMovementState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Manager/SpawnPlanet.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Manager/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/State/UnitAttackDistState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/State/UnitMovementState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Unit/Race1/SpecialIEM.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Manager/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Unit/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Unit/SpecialEffectShip.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialBiomasse.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialCarapateur.cs" />
       </list>
     </option>
   </component>
@@ -151,7 +166,8 @@
       <workItem from="1621442228843" duration="605000" />
       <workItem from="1622746976233" duration="1342000" />
       <workItem from="1622760305988" duration="736000" />
-      <workItem from="1622892820194" duration="2350000" />
+      <workItem from="1622892820194" duration="2483000" />
+      <workItem from="1624053480438" duration="4691000" />
     </task>
     <servers />
   </component>
@@ -184,9 +200,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.8.1920.1040@0.0.1920.1040" timestamp="1617887790693" />
-    <state x="623" y="225" width="672" height="160" key="search.everywhere.popup" timestamp="1619425776496">
+    <state x="623" y="225" width="672" height="160" key="search.everywhere.popup" timestamp="1624055257856">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="623" y="225" width="672" height="160" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1624055257855" />
     <state x="623" y="225" width="672" height="160" key="search.everywhere.popup/0.0.1920.1040/1920.8.1920.1040@0.0.1920.1040" timestamp="1619425776496" />
   </component>
 </project>

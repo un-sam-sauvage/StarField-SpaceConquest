@@ -42,7 +42,17 @@
             <e p="UnitMovementState.cs" t="Include" />
             <e p="UnitPlanetConquestState.cs" t="Include" />
           </e>
-          <e p="Unit.cs" t="Include" />
+          <e p="Unit" t="Include">
+            <e p="Race1" t="Include">
+              <e p="SpecialIEM.cs" t="Include" />
+            </e>
+            <e p="Race2" t="Include">
+              <e p="SpecialBiomasse.cs" t="Include" />
+              <e p="SpecialCarapateur.cs" t="Include" />
+            </e>
+            <e p="SpecialEffectShip.cs" t="Include" />
+            <e p="Unit.cs" t="Include" />
+          </e>
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Examples &amp; Extras" t="Include">

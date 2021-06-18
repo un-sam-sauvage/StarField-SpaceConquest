@@ -15,8 +15,13 @@ public class UnitAttackState : State
     public override void Enter()
     {
         _gm = GameManager.instance;
-        _gm.selectUnitToAttack.AddListener(AttackUnit);
-        _gm.ShowUnitAttackable(_unit.GetPos(), GetUnitAttackable());
+        if (GetUnitAttackable().Count > 0)
+        {
+            _gm.ShowUIforUnit(false);
+        }
+
+        _gm.selectUnit.AddListener(AttackUnit);
+        _gm.ShowUnitSelectable(_unit.GetPos(), GetUnitAttackable());
         base.Enter();
     }
 
@@ -57,10 +62,10 @@ public class UnitAttackState : State
         if (GetUnitAttackable().Count > 0)
         {
             Debug.Log("j'attaque cette unité");
-            Unit unitAttacked = _gm.unitSelectedForAttack.GetComponent<Unit>();
-            _gm.initialEnemiUnitPosition = _gm.unitSelectedForAttack.GetComponent<Unit>().GetPos();
-            _gm.unitSelectedForAttack.GetComponent<Unit>().Move(_unit.GetPos() + Vector3.right);
-            _unit.Rotate(_gm.unitSelectedForAttack.transform.position);
+            Unit unitAttacked = _gm.unitSelected.GetComponent<Unit>();
+            _gm.initialEnemiUnitPosition = _gm.unitSelected.GetComponent<Unit>().GetPos();
+            _gm.unitSelected.GetComponent<Unit>().Move(_unit.GetPos() + Vector3.right);
+            _unit.Rotate(_gm.unitSelected.transform.position);
             int damageDone = _unit.atk - unitAttacked.shield;
             if (damageDone > 0)
             {
@@ -115,6 +120,7 @@ public class UnitAttackState : State
     public override void Exit()
     {
         _gm.panelUIUnitAttackable.SetActive(false);
+        _gm.ShowUIforUnit(true);
         base.Exit();
     }
 }
