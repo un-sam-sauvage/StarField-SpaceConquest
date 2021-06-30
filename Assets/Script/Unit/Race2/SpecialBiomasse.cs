@@ -10,10 +10,10 @@ public class SpecialBiomasse : SpecialEffectShip
     {
         _gm = GameManager.instance;
         _unit = unit;
-        if (UnitHealableAroundThisUnit().Count > 0)
+        if (StaticVoid.GetAlliesAroundThisUnit(_unit).Count > 0)
         {
             _gm.ShowUIforUnit(false);
-            _gm.ShowUnitSelectable(_unit.GetPos(), UnitHealableAroundThisUnit());
+            _gm.ShowUnitSelectable(_unit.GetPos(), StaticVoid.GetAlliesAroundThisUnit(_unit));
             _gm.selectUnit.AddListener(HealUnitSelected);
         }
         else
@@ -32,26 +32,7 @@ public class SpecialBiomasse : SpecialEffectShip
         _gm.ShowUIforUnit(true);
     }
     
-    /*unit.unitAnimator.SetBool("IsDead", true);
-    _gm.ShowUIforUnit(true);*/
 
     //récupère toutes les unités autour de l'unité de biomasse qui est en train de jouer
-    List<Unit> UnitHealableAroundThisUnit()
-    {
-        List<Vector3> tilesAroundUnit = DrawPlayerMovement.GetAdjacentTiles(_unit.GetPos());
-        tilesAroundUnit.Add(_unit.GetPos());
-        List<Unit> unitAroundThisUnit = new List<Unit>();
-        foreach (var playerUnit in _gm.currentPlayerUnits)
-        {
-            foreach (var tile in tilesAroundUnit)
-            {
-                if (playerUnit.GetPos() == tile && playerUnit.life < playerUnit.thisUnit.life && playerUnit != _unit)
-                {
-                    unitAroundThisUnit.Add(playerUnit);
-                }
-            }
-        }
 
-        return unitAroundThisUnit;
-    }
 }

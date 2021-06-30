@@ -25,7 +25,6 @@
         </e>
         <e p="Script" t="Include">
           <e p="CameraMovement.cs" t="Include" />
-          <e p="DrawPlayerMovement.cs" t="Include" />
           <e p="Manager" t="Include">
             <e p="GameManager.cs" t="Include" />
             <e p="SpawnPlanet.cs" t="Include" />
@@ -42,13 +41,16 @@
             <e p="UnitMovementState.cs" t="Include" />
             <e p="UnitPlanetConquestState.cs" t="Include" />
           </e>
+          <e p="StaticVoid.cs" t="Include" />
           <e p="Unit" t="Include">
             <e p="Race1" t="Include">
               <e p="SpecialIEM.cs" t="Include" />
             </e>
             <e p="Race2" t="Include">
+              <e p="SpecialBaveur.cs" t="Include" />
               <e p="SpecialBiomasse.cs" t="Include" />
               <e p="SpecialCarapateur.cs" t="Include" />
+              <e p="SpecialDevoreur.cs" t="Include" />
             </e>
             <e p="SpecialEffectShip.cs" t="Include" />
             <e p="Unit.cs" t="Include" />

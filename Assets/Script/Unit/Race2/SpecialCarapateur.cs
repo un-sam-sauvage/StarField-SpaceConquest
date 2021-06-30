@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SpecialCarapateur : SpecialEffectShip
 {
@@ -11,10 +9,10 @@ public class SpecialCarapateur : SpecialEffectShip
     {
         _gm = GameManager.instance;
         _unit = unit;
-        if (UnitAroundThisUnit().Count > 0)
+        if (StaticVoid.GetAlliesAroundThisUnit(_unit).Count > 0)
         {
             _gm.ShowUIforUnit(false);
-            _gm.ShowUnitSelectable(_unit.GetPos(), UnitAroundThisUnit());
+            _gm.ShowUnitSelectable(_unit.GetPos(), StaticVoid.GetAlliesAroundThisUnit(_unit));
             _gm.selectUnit.AddListener(ShieldUnitSelected);
         }
         else
@@ -31,22 +29,5 @@ public class SpecialCarapateur : SpecialEffectShip
         _gm.ShowUIforUnit(true);
     }
 
-    List<Unit> UnitAroundThisUnit()
-    {
-        List<Vector3> tilesAroundUnit = DrawPlayerMovement.GetAdjacentTiles(_unit.GetPos());
-        tilesAroundUnit.Add(_unit.GetPos());
-        List<Unit> unitAroundThisUnit = new List<Unit>();
-        foreach (var playerUnit in _gm.currentPlayerUnits)
-        {
-            foreach (var tile in tilesAroundUnit)
-            {
-                if (playerUnit.GetPos() == tile && playerUnit != _unit)
-                {
-                    unitAroundThisUnit.Add(playerUnit);
-                }
-            }
-        }
-
-        return unitAroundThisUnit;
-    }
+  
 }

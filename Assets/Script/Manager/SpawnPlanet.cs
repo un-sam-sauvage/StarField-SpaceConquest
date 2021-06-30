@@ -26,7 +26,7 @@ public class SpawnPlanet : MonoBehaviour
                     return tiles;
                 }
 
-                tiles = tiles.Union(DrawPlayerMovement.GetAdjacentTiles(tile)).ToList();
+                tiles = tiles.Union(StaticVoid.GetAdjacentTiles(tile)).ToList();
             }
         }
 
@@ -35,7 +35,7 @@ public class SpawnPlanet : MonoBehaviour
     //stop the loop where there is no more available tiles
     bool CheckIfComplete(Vector3 currentTile, List<Vector3> tiles, Tilemap tilemap)
     {
-        List<Vector3> checkIfTile = DrawPlayerMovement.GetAdjacentTiles(currentTile);
+        List<Vector3> checkIfTile = StaticVoid.GetAdjacentTiles(currentTile);
         List<Vector3> tileToRemove = new List<Vector3>();
         foreach (var tile in tiles)
         {
@@ -88,7 +88,7 @@ public class SpawnPlanet : MonoBehaviour
             GameManager.instance.planets.Add(planet);
         }
 
-        foreach (var tile in  DrawPlayerMovement.GetMovableTile(8,Vector3.zero))
+        foreach (var tile in  StaticVoid.GetMovableTile(8,Vector3.zero))
         {
             _gm.boardTilemap.SetTile(_gm.boardTilemap.WorldToCell(tile), tilesToInstantiate[Random.Range(0,tilesToInstantiate.Count)]);
         }

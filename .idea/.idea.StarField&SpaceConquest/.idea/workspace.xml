@@ -20,16 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d91714f4-5d53-425d-a120-0b7af24c09d5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialBaveur.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialDevoreur.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialDevoreur.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Units/Race2/Baveur.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Units/Race2/Baveur.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Manager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Manager/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/State/UnitAttackDistState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/UnitAttackDistState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/StaticVoid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/StaticVoid.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Manager/SpawnPlanet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Manager/SpawnPlanet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/State/UnitMovementState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/UnitMovementState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Unit.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Unit.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialBiomasse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialBiomasse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialCarapateur.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialCarapateur.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Units/Biomasse.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Units/Biomasse.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Units/Carapateur.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Units/Carapateur.asset.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,13 +49,14 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Script/Planet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialBaveur.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Unit/Race1/SpecialIEM.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/PlayerInfos.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/State/UnitAttackDistState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/State/UnitMovementState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/StaticVoid.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialCarapateur.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/State/UnitPlanetConquestState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Unit/SpecialEffectShip.cs" root0="FORCE_HIGHLIGHTING" />
@@ -84,16 +93,23 @@
         <option value="$PROJECT_DIR$/Assets/Script/Unit/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Unit/SpecialEffectShip.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialBiomasse.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/StaticVoid.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialCarapateur.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialDevoreur.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialBaveur.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1nysQ3taMzoJI86U8JW1YdLN3DC" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -168,6 +184,9 @@
       <workItem from="1622760305988" duration="736000" />
       <workItem from="1622892820194" duration="2483000" />
       <workItem from="1624053480438" duration="4691000" />
+      <workItem from="1624188482853" duration="29000" />
+      <workItem from="1625052895471" duration="2987000" />
+      <workItem from="1625055956693" duration="91000" />
     </task>
     <servers />
   </component>
@@ -189,6 +208,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -200,10 +220,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.8.1920.1040@0.0.1920.1040" timestamp="1617887790693" />
-    <state x="623" y="225" width="672" height="160" key="search.everywhere.popup" timestamp="1624055257856">
+    <state x="623" y="225" width="672" height="160" key="search.everywhere.popup" timestamp="1625053047350">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="160" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1624055257855" />
+    <state x="623" y="225" width="672" height="160" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1625053047350" />
     <state x="623" y="225" width="672" height="160" key="search.everywhere.popup/0.0.1920.1040/1920.8.1920.1040@0.0.1920.1040" timestamp="1619425776496" />
   </component>
 </project>

@@ -20,7 +20,7 @@ public class UnitMovementState : State
     {
         _gm = GameManager.instance;
         _gm.ShowUIforUnit(false);
-        foreach (var tile in DrawPlayerMovement.GetMovableTile(_range, _unit.GetPos()))
+        foreach (var tile in StaticVoid.GetMovableTile(_range, _unit.GetPos()))
         {
             if (_gm.boardTilemap.GetTile(_gm.boardTilemap.WorldToCell(tile)) != null)
             {
