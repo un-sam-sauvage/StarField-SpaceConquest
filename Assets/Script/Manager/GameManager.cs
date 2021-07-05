@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public Unit currentUnit;
 
     [HideInInspector] public UnityEvent selectUnit;
+    [HideInInspector] public UnityEvent nextTurn;
 
     [HideInInspector] public Vector3 initialUnitPosition;
     [HideInInspector] public Vector3 initialEnemiUnitPosition;
@@ -78,6 +79,7 @@ public class GameManager : MonoBehaviour
     public void NextTurn()
     {
         Debug.Log("on passe au tour suivant");
+        nextTurn.Invoke();
         if (_turn >= players.Count - 1)
         {
             _turn = 0;

@@ -20,24 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d91714f4-5d53-425d-a120-0b7af24c09d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialBaveur.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialDevoreur.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialDevoreur.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Units/Race2/Baveur.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Units/Race2/Baveur.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/Unit/Race2/Ruche.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialChoseTentaculaire.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialVaisseauRuche.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Units/Race2/ChoseTentaculaire.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Units/Race2/ChoseTentaculaire.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Units/Race2/VaisseauRuche.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Units/Race2/VaisseauRuche.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarField&amp;SpaceConquest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/StaticVoid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/DrawPlayerMovement.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/StaticVoid.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Manager/SpawnPlanet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Manager/SpawnPlanet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/State/UnitMovementState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/State/UnitMovementState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialBiomasse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialBiomasse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialCarapateur.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialCarapateur.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Units/Biomasse.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Units/Biomasse.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Units/Carapateur.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Units/Carapateur.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Manager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Manager/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +42,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialChoseTentaculaire.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Planet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialBaveur.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Unit/Race1/SpecialIEM.cs" root0="FORCE_HIGHLIGHTING" />
@@ -58,6 +53,8 @@
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/StaticVoid.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialCarapateur.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialVaisseauRuche.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Unit/Race2/Ruche.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/State/UnitPlanetConquestState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Unit/SpecialEffectShip.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialBiomasse.cs" root0="FORCE_HIGHLIGHTING" />
@@ -88,8 +85,6 @@
         <option value="$PROJECT_DIR$/Assets/Script/State/UnitMovementState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/State/UnitAttackState.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Unit/Race1/SpecialIEM.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Script/Manager/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Unit/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Unit/SpecialEffectShip.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialBiomasse.cs" />
@@ -97,6 +92,13 @@
         <option value="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialCarapateur.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialDevoreur.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialBaveur.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Scriptable/ScriptableUnit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialChosseTentaculaire.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecailVaisseauRuche.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Manager/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Unit/Race2/Ruche.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialChoseTentaculaire.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Unit/Race2/SpecialVaisseauRuche.cs" />
       </list>
     </option>
   </component>
@@ -187,6 +189,8 @@
       <workItem from="1624188482853" duration="29000" />
       <workItem from="1625052895471" duration="2987000" />
       <workItem from="1625055956693" duration="91000" />
+      <workItem from="1625497113936" duration="124000" />
+      <workItem from="1625497258656" duration="3099000" />
     </task>
     <servers />
   </component>

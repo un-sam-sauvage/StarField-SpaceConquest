@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "NameOfUnit", menuName = "ScriptableObjects/Unit")]
 public class ScriptableUnit : ScriptableObject
@@ -23,6 +22,8 @@ public class ScriptableUnit : ScriptableObject
     [Header("Cost")] 
     public int popCost;
     public int ressourcesCost;
+    public int rareRessourcesCost;
+    
     [Header("Animator")]
     public RuntimeAnimatorController animator;
     
