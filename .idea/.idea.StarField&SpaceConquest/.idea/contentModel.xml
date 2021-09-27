@@ -47,13 +47,19 @@
               <e p="SpecialIEM.cs" t="Include" />
             </e>
             <e p="Race2" t="Include">
-              <e p="Ruche.cs" t="Include" />
-              <e p="SpecialBaveur.cs" t="Include" />
-              <e p="SpecialBiomasse.cs" t="Include" />
-              <e p="SpecialCarapateur.cs" t="Include" />
-              <e p="SpecialChoseTentaculaire.cs" t="Include" />
-              <e p="SpecialDevoreur.cs" t="Include" />
-              <e p="SpecialVaisseauRuche.cs" t="Include" />
+              <e p="Tier1" t="Include">
+                <e p="SpecialBiomasse.cs" t="Include" />
+                <e p="SpecialCarapateur.cs" t="Include" />
+              </e>
+              <e p="Tier2" t="Include">
+                <e p="SpecialBaveur.cs" t="Include" />
+                <e p="SpecialDevoreur.cs" t="Include" />
+              </e>
+              <e p="Tier3" t="Include">
+                <e p="Ruche.cs" t="Include" />
+                <e p="SpecialChoseTentaculaire.cs" t="Include" />
+                <e p="SpecialVaisseauRuche.cs" t="Include" />
+              </e>
             </e>
             <e p="SpecialEffectShip.cs" t="Include" />
             <e p="Unit.cs" t="Include" />
